@@ -1,38 +1,45 @@
-FACULTY = 'https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/gygcyjsqnjs/127ba53935674ff2b9f8f99c90305632.htm'
-SCHOLAR = 'https://scholar.google.com/citations?user=9hSdRHQAAAAJ&hl=en'
-GITHUB = 'https://github.com/xliukane-lab'
-EMAIL = 'xliu826@bit.edu.cn'
+LAB_ZH = "智能系统设计与优化组"
+LAB_EN = "Intelligent System Design and Optimization Lab"
+FACULTY = "https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/gygcyjsqnjs/127ba53935674ff2b9f8f99c90305632.htm"
+SCHOLAR = "https://scholar.google.com/citations?hl=en&user=9hSdRHQAAAAJ&view_op=list_works&sortby=pubdate"
+EMAIL = "xliu826@bit.edu.cn"
 
-TOPICS = [
-    dict(slug='wind-energy', papers=['wind','impute','prob'],
-        zh=dict(name='风电预测与不确定性建模',tag='可再生能源',intro='当部分风机停止回传数据，怎样利用邻近机组的记录，估计未来几小时可能出现的风况？',
-            sections=[('从单台机组看到整片风场','风经过一台机组后，还会影响下游机组。把不同风机的历史记录分别建模，会丢失这种空间联系。我们将风机之间的关系表示为图，在时间序列中学习风速变化，再生成多条可能的短期风速轨迹。这些轨迹保留了机组之间的关联，可用于比较不同来风条件下的运行情景。'),
-            ('观测不完整时怎样预测','风机监控与数据采集系统（SCADA）的记录有时会中断。我们研究如何融合邻近机组的同期观测和同一台机组的历史趋势，以重建缺失片段。对于功率预测，我们进一步用概率分布刻画未来出力，让读者看到点预测背后的不确定性。')]),
-        en=dict(name='Wind forecasting under uncertainty',tag='Renewable energy',intro='When a turbine stops reporting, what can nearby machines tell us about the range of winds the farm may encounter in the next few hours?',
-            sections=[('From a turbine to a wind farm','As wind travels across a farm, measurements at one turbine carry information about conditions at its neighbours. We represent relationships between turbines as a graph and learn how wind speeds evolve over time. The model generates alternative short-term trajectories that preserve relationships across machines.'),
-            ('When observations go missing','Gaps in supervisory control and data acquisition (SCADA) records interrupt the history used by a forecaster. We combine simultaneous observations from nearby turbines with the past behaviour of the affected machine to reconstruct missing segments. In related work, we estimate a distribution for future power output so that a forecast also expresses its uncertainty.')])
-    ),
-    dict(slug='operations', papers=['agv','shelf'],
-        zh=dict(name='工业调度与空间优化',tag='工业工程',intro='当码头运输任务持续到达，或货架空间有限，如何在工程约束下分配车辆与位置？',
-            sections=[('码头车辆的下一项任务','在集装箱堆场，一辆自动导引车（AGV）接下当前任务，也就改变了后续任务可用的车辆和位置。我们把派车建模为连续决策问题，通过深度强化学习研究实时调度策略，在评估运输效率的同时考虑车辆能耗。'),
-            ('有限空间里的组合决策','货架上的商品位置彼此制约，单独调整一件商品可能引发一连串布局变化。针对二维货架空间分配问题，我们将数据驱动模型引入混合遗传算法，用模型辅助搜索候选布局。这个问题与车辆调度共享一个出发点：算法给出的方案必须满足实际资源约束。')]),
-        en=dict(name='Scheduling and spatial optimisation',tag='Industrial engineering',intro='How should a terminal assign a vehicle to the next job, or a retailer allocate limited shelf space, when one choice restricts the next?',
-            sections=[('Choosing the next job at a terminal','Assigning an automated guided vehicle (AGV) to a container move changes which vehicles are available for later jobs and where they will be. We model dispatch as a sequence of decisions and study real-time policies using deep reinforcement learning, taking vehicle energy use into account alongside transport efficiency.'),
-            ('Allocating scarce space','On a two-dimensional shelf, moving one product changes the feasible placements of its neighbours. We combine a data-driven model with a hybrid genetic algorithm to guide the search over layouts. As in terminal dispatch, a candidate solution must respect the physical limits of the system.')])
-    ),
-    dict(slug='machine-health', papers=['fault'],
-        zh=dict(name='变工况下的设备故障诊断',tag='设备健康',intro='同一台机器改变转速或负载后，信号也会改变。怎样分辨正常的工况变化和真正的故障？',
-            sections=[('把工况变化和故障分开','诊断模型通常用已有工况的数据训练，而现场设备会在不同负载下运行。正常信号随工况而变，使模型难以判断新信号究竟意味着故障，还是仅仅来自新的运行条件。我们的研究关注模型跨工况识别旋转机械故障的能力。'),
-            ('用多种信号表示相互印证','在发表于《Measurement》的研究中，我们从不同模态提取旋转机械状态信息，再融合这些信息进行诊断。读这项工作时可以关注一个检验标准：当测试工况与训练工况不同时，哪些故障特征仍能帮助模型做出判断？')]),
-        en=dict(name='Machine health across operating conditions',tag='Machine health',intro='A change in speed or load alters a machine’s signal. How can a diagnostic model distinguish that change from an actual fault?',
-            sections=[('Separating a fault from a change in load','A diagnostic model may be trained at one load and deployed at another. Because healthy signals also vary with operating conditions, a change in the signal can have more than one explanation. We investigate how to recognise rotating machinery faults when the conditions at test time differ from those observed during training.'),
-            ('Comparing evidence across modalities','Our work in Measurement extracts complementary information from multiple representations of machine condition and combines it for diagnosis. One question guides our reading of the results: which features remain informative about a fault when the operating conditions change?')])
-    ),
-    dict(slug='engineering-design',papers=['design','color'],
-        zh=dict(name='人机协同的工程设计',tag='智能设计',intro='面对开放的设计需求，怎样让模型提出有依据的候选方案，并让设计师保留比较和取舍的空间？',
-            sections=[('为概念设计引入工程知识','大语言模型能够根据需求提出概念，但候选方案还需要与已有工程知识相对照。我们研究由大语言模型和知识图谱共同驱动的概念设计框架，把工程概念之间的关系引入方案生成过程，并让设计师在关键环节参与判断与修订。'),
-            ('从界面配色看设计约束','界面配色为研究知识和数据如何参与设计提供了一个具体场景。我们把配色知识与样本中的颜色组合联系起来，生成供设计者比较的候选方案。同一思路也提示我们在评估生成式设计时，同时考察方案的依据和人能否对它作出有意义的调整。')]),
-        en=dict(name='Human-in-the-loop engineering design',tag='Engineering design',intro='How can a model propose alternatives grounded in engineering knowledge while leaving the designer room to compare and revise them?',
-            sections=[('Bringing engineering knowledge into concept design','A language model can suggest concepts from a brief, but each suggestion still needs to be considered against existing engineering knowledge. We study a conceptual design framework in which a knowledge graph supplies relationships between concepts, a language model helps generate alternatives, and designers take part in evaluation and revision.'),
-            ('Colour as a design constraint','Interface colour provides a concrete setting for studying how knowledge and examples can inform design. We combine colour design knowledge with patterns in existing schemes to generate alternatives for comparison. This raises a broader evaluation question: can a designer understand the basis of a suggestion well enough to make a meaningful change?')])
-    )]
+CAREER = [
+    ("2021.12–", "北京理工大学机械与车辆学院，任教至今。2021 年 12 月至 2025 年 7 月在学院从事博士后研究。", "Faculty, School of Mechanical Engineering, Beijing Institute of Technology. Postdoctoral research at BIT from December 2021 to July 2025."),
+    ("2021.09–2021.10", "香港城市大学数据科学学院，科研助理。", "Research Assistant, School of Data Science, City University of Hong Kong."),
+    ("2017.09–2021.08", "香港城市大学数据科学学院，获数据科学博士学位。", "PhD in Data Science, City University of Hong Kong."),
+    ("2016.08–2017.05", "中国电子信息产业集团有限公司第六研究所，项目助理。", "Project Assistant, Sixth Research Institute of China Electronics Corporation."),
+    ("2015.10–2016.06", "本科期间赴德国卡尔斯鲁厄理工学院交流，学习机械工程。", "Visiting student in mechanical engineering, Karlsruhe Institute of Technology, during undergraduate studies."),
+    ("2012.09–2016.06", "北京理工大学，获工业工程专业工学学士学位。", "Bachelor of Engineering in Industrial Engineering, Beijing Institute of Technology.")
+]
+
+# Paired strings store Chinese first and English second.
+TRACKS = [
+    dict(id="manufacturing", name=("智能制造与物流","Intelligent Manufacturing and Logistics"),
+         intro=("生产计划会被设备故障打断，物流决策也会受到车辆位置和订单变化的影响。我们研究怎样把现场数据转化为调度依据，并让设备状态参与下一步生产决策。","Equipment failures disrupt production plans, while vehicle positions and incoming jobs change the choices available to a dispatcher. We study how operational data and machine condition can inform the next production or logistics decision."),
+         scope=("在化工产品生产中，我们关注工艺参数与产品性能之间的关系，并研究数字化监控和数字孪生如何支持过程分析。面向设备运行，我们研究故障预测与健康管理（PHM）。面向制造任务，我们开发工业智能体，并研究怎样在具体工况下评价和验证垂域模型。","For chemical product manufacturing, we study how process parameters affect product performance and how digital monitoring and digital twins support process analysis. Our work on equipment covers prognostics and health management (PHM). We also develop industrial agents and investigate how to evaluate and validate domain-specific models under representative operating conditions."),
+         project=("参与国防科研专项，承担与工艺建模及生产过程数字化有关的分承研任务。另承担垂域模型评价与虚拟验证相关子课题。","The group contributes to defence research through work on process modelling and manufacturing digitalisation. A separate subproject addresses evaluation and virtual validation of domain-specific models."),
+         works=["agv","fault","vessel"], figure="agv", fig=("原文图 2 展示集装箱从船侧到堆场的卸载流程。岸桥和场桥之间的运输任务由 AGV 衔接。","Figure 2 traces an unloading operation from vessel to yard. AGVs connect the quay cranes to the yard cranes.")),
+    dict(id="energy",name=("可再生能源","Renewable Energy"),
+         intro=("在风电场，同一股来风先后经过不同机组。我们利用这种空间联系估计未来风况和出力范围，进而研究如何在来风不确定时协调多台机组的运行。","As a wind front crosses a farm, turbines encounter it at different times. We use that spatial relationship to estimate future winds and power output, then study how turbines can coordinate their operation under uncertain inflow."),
+         scope=("风机传感器掉线会留下不完整的运行记录。我们从数据修复出发，建立能表达多种可能风况的预测模型，再将预测信息用于风场优化控制。以集群偏航为例，一台机组改变朝向会影响下游机组，因此需要从整个风场考察控制决策。","When sensors drop out, forecasts must rely on incomplete records. We study how to reconstruct those records, generate possible wind trajectories and bring forecasts into wind farm control. In coordinated yaw control, for example, rotating one turbine changes conditions downstream, so the relevant decision is a farm-level one."),
+         project=("国家自然科学基金青年科学基金项目「容忍缺失数据的可再生能源时空超分辨率场景生成」，刘欣主持，2023.01–2025.12。","NSFC Young Scientists Fund project on spatiotemporal super-resolution scenario generation for renewable energy with missing data. Principal investigator: Xin Liu, January 2023 to December 2025."),
+         works=["wind","prob","impute"], figure="wind", fig=("原文图 4 给出 GAPGAN 的结构。模型根据历史观测学习机组间的关联，并为同一段历史生成多条可能的风速轨迹。","Figure 4 shows how GAPGAN learns links between turbines and generates alternative wind speed trajectories from the same historical record.")),
+    dict(id="design",name=("智能设计","Intelligent Design"),
+         intro=("工程需求常常以一句不完整的描述开始。我们研究怎样挖掘其中的功能需求，让模型在工程知识约束下生成候选概念，再以设计者的判断和代理模型的快速评估逐步改进方案。","An engineering brief often starts with an incomplete description. We investigate how to recover functional requirements, generate concepts grounded in domain knowledge, and refine candidate designs through human judgement and efficient surrogate evaluation."),
+         scope=("在产品概念设计中，我们把自然语言需求组织为功能与结构的关系，使设计师能追溯一个概念从何而来。对于有较大搜索空间的设计任务，则研究如何让代理模型先筛选候选方案，把精细评估集中到有希望的区域。","In conceptual product design, we organise natural-language requirements around functions and structures so designers can trace the basis of a concept. In large design spaces, we investigate how surrogate models can screen alternatives before the more promising ones receive a detailed evaluation."),
+         project=("国家自然科学基金面上项目「群智创新设计空间的协同探索与创新生成理论与方法」，刘欣主持，2024.01–2027.12。","NSFC General Program on collaborative exploration and creative generation in collective-intelligence design spaces. Principal investigator: Xin Liu, January 2024 to December 2027."),
+         works=["design","color","shelf"],figure="design",fig=("原文图 1 展示 KnowLoop 的完整流程。需求结构化之后，领域知识图谱和专家反馈共同引导概念方案的生成。","Figure 1 traces the KnowLoop workflow from structured requirements to concept generation guided by a domain knowledge graph and expert feedback."))
+]
+
+WORKS = {
+"agv":(("让码头运输车随任务实时调度","Dispatching AGVs as terminal jobs arrive"),("堆场里的一次派车会同时改变车辆位置和后续任务的等待时间。我们将派车表述为马尔可夫决策过程，以多智能体深度强化学习共同考虑总完工时间和车辆能耗。在不同规模堆场的仿真实验中，论文比较了该策略与基准方法的运行效率和用能表现。","Each dispatch changes both a vehicle’s position and the waiting time for later jobs. We formulated dispatch as a Markov decision process and trained a multi-agent policy to consider makespan and energy use together. Simulations compared operational and energy performance with benchmark policies across several yard sizes.")),
+"fault":(("少量故障样本下识别跨工况故障","Recognising faults across operating conditions"),("转速与负载改变时，振动信号也会变，而新工况的故障样本往往很少。MXProto 融合不同模态共有及特有的特征，再动态调整各原型分类器的权重。论文用公开数据集和消融实验检验两级融合对跨工况诊断的贡献。","Changes in speed and load alter vibration signals, yet faults recorded under the new conditions can be scarce. MXProto fuses shared and modality-specific features, then adjusts the weights of prototype classifiers. Experiments on benchmark datasets and ablation studies examined how both fusion stages contribute to diagnosis.")),
+"vessel":(("船舶部署与空箱调运如何共同决策","Planning vessel deployment and empty-container moves together"),("当集装箱周转时间不确定时，先定船期再补调空箱可能增加租箱成本。研究用两阶段随机规划联立这两类决策，并以加速 Benders 分解求解。在文中数值实验里，相比被动调箱策略，联合方案的总成本平均降低 0.72%。","When container turnaround is uncertain, assigning vessels before arranging empty boxes can increase leasing costs. We linked both decisions in a two-stage stochastic program and solved it with accelerated Benders decomposition. In the reported numerical experiments, integrated planning reduced average total cost by 0.72% relative to reactive repositioning.")),
+"wind":(("为同一段风况生成多种未来情景","Generating alternative futures for a wind farm"),("单条预测曲线难以表达一股来风在机组之间传播的多种可能。GAPGAN 把多机组历史观测转成图，再从同一段历史生成不同风速场景。论文用 11 台风机的数据与五种基准模型比较，同时检验轨迹形态和情景多样性。","A single forecast curve cannot describe the different ways a wind front may travel through a farm. GAPGAN maps turbine histories to a graph and generates alternative wind trajectories from the same observations. Using records from 11 turbines, the study compared five benchmarks and examined trajectory shape as well as scenario diversity.")),
+"prob":(("让风电功率预测区间保持有序","Keeping wind power prediction intervals ordered"),("分别预测多个分位数时，较高分位数可能落在较低分位数之下。该研究先学习中位数，再学习区间长度，使上下界保持有序。注意力辅助的常微分方程网络还可在更细的时间尺度上生成概率预测。","Estimating quantiles independently can place a higher quantile below a lower one. This work first learns the median and then interval lengths, preserving their order. An attention-assisted ordinary differential equation network also produces probabilistic forecasts at finer time resolutions.")),
+"impute":(("从相邻机组和历史记录补回缺测数据","Recovering missing turbine measurements"),("风机监控系统既会丢失零星读数，也会出现连续的数据空段。STF-GAIN 分别估计不同数据表示下的缺失值，再根据置信度融合结果。论文比较了随机缺失与成块缺失下的修复精度，并进一步检查修复数据对下游预测的影响。","Turbine monitoring systems lose individual readings as well as continuous blocks of data. STF-GAIN estimates missing values from different representations and combines the estimates according to their confidence. The study tested both missingness patterns and examined how imputed data affected downstream prediction.")),
+"design":(("从模糊需求推导可追溯的产品概念","Turning an ambiguous brief into a traceable concept"),("KnowLoop 先用功能、行为和结构之间的关系整理需求，再以领域知识图谱约束大语言模型，并由专家参与修订。在三项水处理装备设计任务中，相比 FBStd，专家对四项指标的评分平均提升约 2.8%。","KnowLoop structures requirements in terms of function, behaviour and structure. A domain knowledge graph and expert supervision then guide concept generation by a language model. Across three water-treatment equipment tasks, expert ratings averaged about 2.8% higher than FBStd over four evaluation criteria.")),
+"color":(("根据设计主题生成界面配色","Generating interface palettes for a design theme"),("同一主题可以有多种配色，但颜色之间仍需协调。CS-Ganerator 从图像中提取配色样本，并把色彩知识引入条件生成模型。生成后用和谐度筛选，再按冷暖与明暗整理结果，便于设计师在同一主题下比较方案。","A design theme can support many palettes, but the colours still need to work together. CS-Ganerator extracts palettes from images and integrates colour knowledge into a conditional generative model. It filters candidates for harmony, then groups them by properties such as warmth and darkness for designers to compare.")),
+"shelf":(("用代理模型筛选二维布局方案","Screening two-dimensional layouts with a surrogate"),("二维货架布局提供了一个检验代理模型辅助设计的场景。算法先用代理模型快速淘汰较差布局，随后利用禁忌表深入搜索，并在产生新解时修复不满足约束的布局。验证包含五类情景的 25 个仿真实例以及两个实际案例。","Two-dimensional shelf layouts provide a test of surrogate-assisted design. A surrogate first screens weak candidates, then a tabu list guides a deeper search. The genetic algorithm repairs infeasible layouts as it produces new ones. Evaluation covered 25 simulated instances across five scenarios and two real cases."))
+}

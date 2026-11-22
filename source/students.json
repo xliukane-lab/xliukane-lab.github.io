@@ -1,0 +1,420 @@
+[
+  {
+    "name": "黄怡",
+    "roman": "Yi Huang",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": [
+      "基于元学习和自监督的小样本条件下旋转设备故障诊断方法研究",
+      "Few-shot fault diagnosis with meta-learning and self-supervision"
+    ]
+  },
+  {
+    "name": "吴李",
+    "roman": "Li Wu",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": [
+      "基于空间跨尺度特征耦合的风场超分辨率研究",
+      "Wind-field super-resolution across spatial scales"
+    ]
+  },
+  {
+    "name": "商文龙",
+    "roman": "Wenlong Shang",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": [
+      "基于多智能体强化学习的风场布局数据驱动算法研究",
+      "Wind farm layout using multi-agent reinforcement learning"
+    ]
+  },
+  {
+    "name": "黄梓杰",
+    "roman": "Zijie Huang",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": [
+      "面向协作运输任务的多智能体深度强化学习方法研究",
+      "Cooperative transport with multi-agent deep reinforcement learning"
+    ]
+  },
+  {
+    "name": "杨淼",
+    "roman": "Miao Yang",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": [
+      "基于模型集成的焚烧炉关键参数短期预测",
+      "Short-term forecasting of incinerator process parameters"
+    ]
+  },
+  {
+    "name": "徐佳燃",
+    "roman": "Jiaran Xu",
+    "degree": "M",
+    "start": "2021-09",
+    "end": "2026-06",
+    "topic": [
+      "基于集成学习的复杂气象场景风电功率预测方法研究",
+      "Wind power forecasting under complex weather conditions"
+    ]
+  },
+  {
+    "name": "郭怡冉",
+    "roman": "Yiran Guo",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": [
+      "考虑数据缺失的风电功率短期不确定性预测方法研究",
+      "Probabilistic wind power forecasting with missing data"
+    ]
+  },
+  {
+    "name": "杨自娟",
+    "roman": "Zijuan Yang",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": [
+      "基于生成式模型的个性化需求响应界面原型智能设计方法研究",
+      "Generative design of interface prototypes for individual requirements"
+    ]
+  },
+  {
+    "name": "李媛媛",
+    "roman": "Yuanyuan Li",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": [
+      "多模态商品推荐系统",
+      "Multimodal product recommendation"
+    ]
+  },
+  {
+    "name": "郑轶杰",
+    "roman": "Yijie Zheng",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": [
+      "复杂系统网络设计与决策优化",
+      "Network design and decision optimisation in complex systems"
+    ]
+  },
+  {
+    "name": "陈中华",
+    "roman": "Zhonghua Chen",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "剩余寿命预测与健康管理",
+      "Remaining useful life prediction and health management"
+    ]
+  },
+  {
+    "name": "赵锡睿",
+    "roman": "Xirui Zhao",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "制造系统调度优化",
+      "Manufacturing scheduling"
+    ]
+  },
+  {
+    "name": "汪浩",
+    "roman": "Hao Wang",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "风电系统时序预测",
+      "Time-series forecasting for wind energy systems"
+    ]
+  },
+  {
+    "name": "安尚琦",
+    "roman": "Shangqi An",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "生成式产品概念设计",
+      "Generative product concept design"
+    ]
+  },
+  {
+    "name": "王知寒",
+    "roman": "Zhihan Wang",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "系统运筹优化",
+      "Operations research and systems optimisation"
+    ]
+  },
+  {
+    "name": "钟维乐",
+    "roman": "Weile Zhong",
+    "degree": "M",
+    "start": "2024-09",
+    "end": "",
+    "topic": [
+      "知识驱动的故障分析",
+      "Knowledge-driven fault analysis"
+    ]
+  },
+  {
+    "name": "孔琦",
+    "roman": "Qi Kong",
+    "degree": "M",
+    "start": "2025-09",
+    "end": "",
+    "topic": [
+      "工业互联网与数字孪生",
+      "Industrial Internet and digital twins"
+    ]
+  },
+  {
+    "name": "韦雪莹",
+    "roman": "Xueying Wei",
+    "degree": "M",
+    "start": "2025-09",
+    "end": "",
+    "topic": [
+      "生成式产品概念设计",
+      "Generative product concept design"
+    ]
+  },
+  {
+    "name": "曹钦凯",
+    "roman": "Qinkai Cao",
+    "degree": "M",
+    "start": "2025-09",
+    "end": "",
+    "topic": [
+      "装备预测性控制",
+      "Predictive control of equipment"
+    ]
+  },
+  {
+    "name": "高鹏",
+    "roman": "Peng Gao",
+    "degree": "M",
+    "start": "2025-09",
+    "end": "",
+    "topic": [
+      "制造系统优化调度",
+      "Manufacturing scheduling optimisation"
+    ]
+  },
+  {
+    "name": "谭李言蹊",
+    "roman": "Liyanxi Tan",
+    "degree": "B",
+    "start": "2023-01",
+    "end": "2023-06",
+    "topic": [
+      "白车身三坐标检测的在线自适应检测算法研究",
+      "Adaptive coordinate inspection for automotive bodies-in-white"
+    ]
+  },
+  {
+    "name": "李泽顺",
+    "roman": "Zeshun Li",
+    "degree": "B",
+    "start": "2023-01",
+    "end": "2023-06",
+    "topic": [
+      "光学字符识别（OCR）的模型轻量化技术研究",
+      "Lightweight optical character recognition"
+    ]
+  },
+  {
+    "name": "郭怡冉",
+    "roman": "Yiran Guo",
+    "degree": "B",
+    "start": "2023-01",
+    "end": "2023-06",
+    "topic": [
+      "风力发电机组运行数据的数据质量提升方法研究",
+      "Improving data quality for wind turbine operations"
+    ]
+  },
+  {
+    "name": "杨自娟",
+    "roman": "Zijuan Yang",
+    "degree": "B",
+    "start": "2023-01",
+    "end": "2023-06",
+    "topic": [
+      "基于知识-数据融合的 Web 前端智能配色方案生成算法研究",
+      "Knowledge- and data-driven web palette generation"
+    ]
+  },
+  {
+    "name": "许艺凡",
+    "roman": "Yifan Xu",
+    "degree": "B",
+    "start": "2023-01",
+    "end": "2023-06",
+    "topic": [
+      "白车身三坐标检测的测点采样策略及检测路径优化研究",
+      "Sampling and path planning for body-in-white inspection"
+    ]
+  },
+  {
+    "name": "汪浩",
+    "roman": "Hao Wang",
+    "degree": "B",
+    "start": "2024-01",
+    "end": "2024-06",
+    "topic": [
+      "基于不完备数据的风电短期输出功率预测方法研究",
+      "Short-term wind power forecasting with incomplete data"
+    ]
+  },
+  {
+    "name": "赵锡睿",
+    "roman": "Xirui Zhao",
+    "degree": "B",
+    "start": "2024-01",
+    "end": "2024-06",
+    "topic": [
+      "面向大规模定制的柔性作业车间重调度算法研究",
+      "Flexible job shop rescheduling for mass customisation"
+    ]
+  },
+  {
+    "name": "安尚琦",
+    "roman": "Shangqi An",
+    "degree": "B",
+    "start": "2024-01",
+    "end": "2024-06",
+    "topic": [
+      "面向泛领域主题的 Web 前端配色方案智能设计技术研究",
+      "Theme-aware colour design for web interfaces"
+    ]
+  },
+  {
+    "name": "陈中华",
+    "roman": "Zhonghua Chen",
+    "degree": "B",
+    "start": "2024-01",
+    "end": "2024-06",
+    "topic": [
+      "基于数据挖掘的锂电池剩余寿命预测方法研究",
+      "Predicting the remaining life of lithium batteries"
+    ]
+  },
+  {
+    "name": "朱帝璇",
+    "roman": "Dixuan Zhu",
+    "degree": "B",
+    "start": "2024-01",
+    "end": "2024-06",
+    "topic": [
+      "基于数据挖掘的行星齿轮箱故障诊断方法研究",
+      "Planetary gearbox fault diagnosis"
+    ]
+  },
+  {
+    "name": "黎汉魂",
+    "roman": "Hanhun Li",
+    "degree": "B",
+    "start": "2025-01",
+    "end": "2025-06",
+    "topic": [
+      "基于聚类算法的机器人传感器布局设计方法研究",
+      "Clustering for robot sensor placement"
+    ]
+  },
+  {
+    "name": "罗学仪",
+    "roman": "Xueyi Luo",
+    "degree": "B",
+    "start": "2025-01",
+    "end": "2025-06",
+    "topic": [
+      "基于数据挖掘的智能芯片领域卡脖子技术识别与评价研究",
+      "Identifying technology bottlenecks in intelligent chips"
+    ]
+  },
+  {
+    "name": "侯向阳",
+    "roman": "Xiangyang Hou",
+    "degree": "B",
+    "start": "2025-01",
+    "end": "2025-06",
+    "topic": [
+      "面向最小化尾流的风电场微观布局优化设计研究",
+      "Wind farm micro-siting to reduce wake effects"
+    ]
+  },
+  {
+    "name": "曹钦凯",
+    "roman": "Qinkai Cao",
+    "degree": "B",
+    "start": "2025-01",
+    "end": "2025-06",
+    "topic": [
+      "基于深度强化学习的风电机组集群偏航角智能控制技术研究",
+      "Coordinated turbine yaw control with deep reinforcement learning"
+    ]
+  },
+  {
+    "name": "周孙涵",
+    "roman": "Sunhan Zhou",
+    "degree": "B",
+    "start": "2025-01",
+    "end": "2025-06",
+    "topic": [
+      "基于视觉的车道线检测与跟踪方法",
+      "Vision-based lane detection and tracking"
+    ]
+  },
+  {
+    "name": "任奕铭",
+    "roman": "Yiming Ren",
+    "degree": "B",
+    "start": "2026-01",
+    "end": "2026-06",
+    "topic": [
+      "基于强化学习的短期风速自适应概率预测模型研究",
+      "Adaptive probabilistic wind forecasting using reinforcement learning"
+    ]
+  },
+  {
+    "name": "揭京峰",
+    "roman": "Jingfeng Jie",
+    "degree": "B",
+    "start": "2026-01",
+    "end": "2026-06",
+    "topic": [
+      "面向工业机器视觉的模型蒸馏与云边协同技术研究",
+      "Model distillation and edge–cloud collaboration for industrial vision"
+    ]
+  },
+  {
+    "name": "张荣夫",
+    "roman": "Rongfu Zhang",
+    "degree": "B",
+    "start": "2026-01",
+    "end": "2026-06",
+    "topic": [
+      "基于意图识别和轨迹预测的车辆变道行为预测研究",
+      "Predicting lane changes from intent and trajectories"
+    ]
+  }
+]

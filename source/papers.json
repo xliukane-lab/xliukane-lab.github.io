@@ -100,5 +100,197 @@
     "year": 2025,
     "journal": "Advanced Engineering Informatics",
     "doi": "10.1016/j.aei.2024.103105"
+  },
+  "vessel": {
+    "title": "Integrated optimization of vessel dispatching and empty container repositioning considering turnover time uncertainty",
+    "authors": [
+      "Xi Xiang",
+      "Zihao Wang",
+      "Lin Gong",
+      "Shuai Jia",
+      "Xin Liu",
+      "Minxia Liu"
+    ],
+    "journal": "Computers & Industrial Engineering",
+    "year": 2024,
+    "doi": "10.1016/j.cie.2024.110566"
+  },
+  "multi": {
+    "title": "Short-Term Multi-Step Ahead Wind Power Predictions Based On A Novel Deep Convolutional Recurrent Network Method",
+    "authors": [
+      "Xin Liu",
+      "Luoxiao Yang",
+      "Zijun Zhang"
+    ],
+    "journal": "IEEE Transactions on Sustainable Energy",
+    "year": 2021,
+    "doi": "10.1109/tste.2021.3067436"
+  },
+  "yaw": {
+    "title": "Predictive Coordinated Yaw Control for Wind Turbine Cluster Based on Deep Reinforcement Learning",
+    "authors": [
+      "Qinkai Cao",
+      "Jiayang Chen",
+      "Xin Liu",
+      "Jingjia Yu"
+    ],
+    "journal": "2025 4th International Conference on Power Systems and Electrical Technology (PSET)",
+    "year": 2025,
+    "doi": "10.1109/pset66242.2025.11296631"
+  },
+  "transfer": {
+    "title": "Short-term predictions of multiple wind turbine power outputs based on deep neural networks with transfer learning",
+    "authors": [
+      "Xin Liu",
+      "Zheming Cao",
+      "Zijun Zhang"
+    ],
+    "journal": "Energy",
+    "year": 2021,
+    "doi": "10.1016/j.energy.2020.119356"
+  },
+  "load": {
+    "title": "A comparative study of the data-driven day-ahead hourly provincial load forecasting methods: From classical data mining to deep learning",
+    "authors": [
+      "Xin Liu",
+      "Zijun Zhang",
+      "Zhe Song"
+    ],
+    "journal": "Renewable and Sustainable Energy Reviews",
+    "year": 2020,
+    "doi": "10.1016/j.rser.2019.109632"
+  },
+  "ref2": {
+    "title": "A Design Knowledge Transfer Method Based on Cross-Domain Knowledge Network",
+    "authors": [
+      "Haibo Liu",
+      "Lin Gong",
+      "Xianpeng Zhang",
+      "Xin Liu",
+      "Zhenchong Mo",
+      "Haoran Cui"
+    ],
+    "journal": "2024 2nd International Conference on Design Science (ICDS)",
+    "year": 2024,
+    "doi": "10.1109/icds62420.2024.10751692"
+  },
+  "ref5": {
+    "title": "A Hybrid Data-Knowledge Driven Method for Technology Development Risk Evaluation",
+    "authors": [
+      "Xirui Zhao",
+      "Zhuoheng Lyu",
+      "Peidong Ma",
+      "Xinyou Yuan",
+      "Jian Hou",
+      "Xin Liu"
+    ],
+    "journal": "Advances in Transdisciplinary Engineering",
+    "year": 2023,
+    "doi": "10.3233/atde230048"
+  },
+  "ref10": {
+    "title": "A Two-Stage Deep Autoencoder-Based Missing Data Imputation Method for Wind Farm SCADA Data",
+    "authors": [
+      "Xin Liu",
+      "Zijun Zhang"
+    ],
+    "journal": "IEEE Sensors Journal",
+    "year": 2021,
+    "doi": "10.1109/jsen.2021.3061109"
+  },
+  "ref12": {
+    "title": "An integrated approach for selecting design parameters in smart product-service system conceptual design",
+    "authors": [
+      "Haoran Cui",
+      "Lin Gong",
+      "Yan Yan",
+      "Zhenchong Mo",
+      "Xi Xiang",
+      "Xin Liu"
+    ],
+    "journal": "Procedia CIRP",
+    "year": 2023,
+    "doi": "10.1016/j.procir.2023.01.003"
+  },
+  "ref14": {
+    "title": "Deep graph temporal convolutional neural networks for short-term wind speed prediction",
+    "authors": [
+      "Jingjia Yu",
+      "Xin Liu",
+      "Lin Gong",
+      "Minxia Liu",
+      "Xi Xiang",
+      "Jian Xie",
+      "Yongyang Zhang"
+    ],
+    "journal": "2024 4th International Conference on Neural Networks, Information and Communication (NNICE)",
+    "year": 2024,
+    "doi": "10.1109/nnice61279.2024.10498379"
+  },
+  "ref18": {
+    "title": "Multi-Agent Reinforcement Learning-Based Real-Time Cooking Task Scheduling Optimization for Multi-Chef Collaborative Cooking",
+    "authors": [
+      "Shoulin Zhu",
+      "Yiming Ren",
+      "Minxia Liu",
+      "Lin Gong",
+      "Yongyang Zhang",
+      "Xin Liu"
+    ],
+    "journal": "2024 International Conference on Automation in Manufacturing, Transportation and Logistics (ICaMaL)",
+    "year": 2024,
+    "doi": "10.1109/icamal62577.2024.10919835"
+  },
+  "ref21": {
+    "title": "Progressive Fusion of LLM-Augmented Multi-Modal Data for Enhanced Product Recommendations",
+    "authors": [
+      "Xinhao Li",
+      "Lin Gong",
+      "Xin Liu",
+      "Xi Xiang"
+    ],
+    "journal": "2025 IEEE 6th International Seminar on Artificial Intelligence, Networking and Information Technology (AINIT)",
+    "year": 2025,
+    "doi": "10.1109/ainit65432.2025.11035374"
+  },
+  "ref22": {
+    "title": "Quality Inspection Data-Driven Sampling Strategy and Path Optimization of Coordinate Measuring Machines for Body-in-White",
+    "authors": [
+      "Yifan Xu",
+      "Qiang Li",
+      "Hang Ye",
+      "Xin Liu",
+      "Xi Xiang",
+      "Jian Xie"
+    ],
+    "journal": "2024 International Conference on Automation in Manufacturing, Transportation and Logistics (ICaMaL)",
+    "year": 2024,
+    "doi": "10.1109/icamal62577.2024.10919602"
+  },
+  "ref24": {
+    "title": "Reinforcement Learning-Based Dynamic Probability Distribution Selection for Wind Power Prediction",
+    "authors": [
+      "Yiming Ren",
+      "Rongfu Zhang",
+      "Xin Liu",
+      "Lin Gong"
+    ],
+    "journal": "2025 8th International Conference on Energy, Electrical and Power Engineering (CEEPE)",
+    "year": 2025,
+    "doi": "10.1109/ceepe64987.2025.11034281"
+  },
+  "ref29": {
+    "title": "Vision Transformer-Based Multi-Scale Wind Field Super-Resolution Reconstruction Model",
+    "authors": [
+      "Li Wu",
+      "Rongfu Zhang",
+      "Yingqi Zhang",
+      "Yiming Ren",
+      "Lin Gong",
+      "Xin Liu"
+    ],
+    "journal": "2025 4th International Conference on Green Energy and Power Systems (ICGEPS)",
+    "year": 2025,
+    "doi": "10.1109/icgeps65133.2025.11034601"
   }
 }

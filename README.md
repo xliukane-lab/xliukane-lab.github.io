@@ -1,19 +1,13 @@
-# 刘欣课题组 · Xin Liu Research Group
+# 智能系统设计与优化组 | ISDO
 
-北京理工大学刘欣课题组的中英双语研究主页。打开 `index.html` 即可在本地浏览。英文入口为 `en/index.html`。
+Intelligent System Design and Optimization Lab, Beijing Institute of Technology.
 
-## 更新内容
+私有草稿可直接打开 `index.html` 或 `en/index.html` 浏览。主页、研究、论文和团队四个栏目均提供中英文版本。
 
-双语研究介绍在 `source/content.py`，两个版本的论文清单共同读取 `source/papers.json`。主页简介、个人简介及页面模板在 `source/build.py`，样式在 `assets/style.css`。
+## 更新草稿
 
-编辑后，从仓库根目录运行以下命令。脚本使用 Python 3 标准库，无需安装依赖。
+在 `source/content.py` 中更新双语研究介绍和履历，在 `source/papers.json` 中维护论文，在 `source/students.json` 中维护成员和课题。三幅研究图分别来自 AGV 调度论文图 2、GAPGAN 论文图 4 和 KnowLoop 论文图 1，研究页图注附有 DOI 来源。
 
-```sh
-python source/build.py
-```
+课题组照片放入 `assets/photos/` 文件夹。首页合影使用文件名 `group.jpg`，团队页的研讨照片和毕业留念分别使用 `seminar.jpg` 和 `graduation.jpg`。也支持同名的 WebP 或 PNG 文件。
 
-将源文件和生成的 HTML 一并提交到 `main`。GitHub Pages 的发布来源为 `main` 分支的根目录。
-
-## 资料来源
-
-个人介绍与学术联系信息来自[北京理工大学教师主页](https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/gygcyjsqnjs/127ba53935674ff2b9f8f99c90305632.htm)。论文链接使用各文章的 DOI。首页风机照片来自 [Pexels](https://www.pexels.com/photo/414837/)，遵循 [Pexels License](https://www.pexels.com/license/)。照片用于说明研究场景。
+在仓库根目录运行 `python source/build.py`，即可根据内容与照片重新生成本地网页。生成脚本只需 Python 标准库。
