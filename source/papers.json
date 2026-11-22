@@ -1,0 +1,104 @@
+{
+  "wind": {
+    "title": "A GCN-based adaptive generative adversarial network model for short-term wind speed scenario prediction",
+    "authors": [
+      "Xin Liu",
+      "Jingjia Yu",
+      "Lin Gong",
+      "Minxia Liu",
+      "Xi Xiang"
+    ],
+    "year": 2024,
+    "journal": "Energy",
+    "doi": "10.1016/j.energy.2024.130931"
+  },
+  "impute": {
+    "title": "A novel spatiotemporal feature fusion-based GAN framework for SCADA data imputation of wind turbines",
+    "authors": [
+      "Yiran Guo",
+      "Xin Liu",
+      "Minxia Liu",
+      "Jian Xie",
+      "Xi Xiang"
+    ],
+    "year": 2025,
+    "journal": "Energy",
+    "doi": "10.1016/j.energy.2025.139525"
+  },
+  "prob": {
+    "title": "The attention-assisted ordinary differential equation networks for short-term probabilistic wind power predictions",
+    "authors": [
+      "Xin Liu",
+      "Luoxiao Yang",
+      "Zijun Zhang"
+    ],
+    "year": 2022,
+    "journal": "Applied Energy",
+    "doi": "10.1016/j.apenergy.2022.119794"
+  },
+  "agv": {
+    "title": "Real-time AGV scheduling optimisation method with deep reinforcement learning for energy-efficiency in the container terminal yard",
+    "authors": [
+      "Lin Gong",
+      "Zijie Huang",
+      "Xi Xiang",
+      "Xin Liu"
+    ],
+    "year": 2024,
+    "journal": "International Journal of Production Research",
+    "doi": "10.1080/00207543.2024.2325583"
+  },
+  "shelf": {
+    "title": "A data-driven model assisted hybrid genetic algorithm for a two-dimensional shelf space allocation problem",
+    "authors": [
+      "Lanlan Zheng",
+      "Xin Liu",
+      "Feng Wu",
+      "Zijun Zhang"
+    ],
+    "year": 2023,
+    "journal": "Swarm and Evolutionary Computation",
+    "doi": "10.1016/j.swevo.2023.101251"
+  },
+  "fault": {
+    "title": "A multi-modal fault diagnosis model for rotating machinery under cross-working conditions",
+    "authors": [
+      "Jianhai Yu",
+      "Jian Xie",
+      "Xin Liu",
+      "Minxia Liu",
+      "Jiayang Chen",
+      "Qingwen Zhou"
+    ],
+    "year": 2026,
+    "journal": "Measurement",
+    "doi": "10.1016/j.measurement.2025.118886"
+  },
+  "design": {
+    "title": "A Human-in-the-Loop conceptual design framework jointly driven by large language models and knowledge graphs",
+    "authors": [
+      "Yifan Xu",
+      "Jian Xie",
+      "Xin Liu",
+      "Haoran Cui",
+      "Minxia Liu"
+    ],
+    "year": 2026,
+    "journal": "Advanced Engineering Informatics",
+    "doi": "10.1016/j.aei.2026.104646"
+  },
+  "color": {
+    "title": "Intelligent color scheme generation for web interface color design based on knowledge − data fusion method",
+    "authors": [
+      "Xin Liu",
+      "Zijuan Yang",
+      "Lin Gong",
+      "Minxia Liu",
+      "Xi Xiang",
+      "Zhenchong Mo"
+    ],
+    "year": 2025,
+    "journal": "Advanced Engineering Informatics",
+    "doi": "10.1016/j.aei.2024.103105"
+  }
+}
