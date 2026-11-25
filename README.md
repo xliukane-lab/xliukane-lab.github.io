@@ -2,7 +2,7 @@
 
 Intelligent System Design and Optimization Lab, Beijing Institute of Technology.
 
-私有草稿可直接打开 `index.html` 或 `en/index.html` 浏览。首页包含个人简介、学习和工作经历，并展示研究方向和典型论文；个人资料页 `pi.html` 另列课程。People 页面展示学生、已毕业校友和毕业去向。各页均可切换中英文。
+网页通过 GitHub Pages 发布。首页介绍刘欣的研究方向、教育和工作经历；`pi.html` 另列课程，指导学生页展示学生信息、毕业生和去向。各页均可切换中英文。
 
 ## 更新草稿
 
