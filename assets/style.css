@@ -36,18 +36,17 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .lab-links a { font-weight:650; }
 .lab-links .lab-action { display:inline-block; background:var(--teal); color:#fff; border-radius:3px; text-decoration:none; padding:7px 16px; }
 .lab-action:hover { background:#004d49; }
-.lab-grid .photo-slot img { aspect-ratio:16/10; }
-.lab-grid .lab-scene img { object-position:50% 36%; }
-.pi-card { display:flex; gap:24px; align-items:center; }
-.pi-card img { flex:none; border-radius:3px; object-fit:cover; object-position:center 25%; }
-.pi-card h2 { font-size:28px; margin:4px 0; }
-.pi-card .contact,.teaching p { margin:12px 0; }
 @media(max-width:700px){
- .lab-grid{grid-template-columns:minmax(0,1fr);gap:22px}
- .lab-grid .photo-slot img{aspect-ratio:2.5}
- .pi-card{align-items:flex-start;gap:14px}.pi-card img{width:65px;height:83px}
+ .teaching p{margin:12px 0}
 }
 .profile-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(185px,260px); gap:clamp(48px,8vw,120px); padding:49px 0; align-items:center; }
+.home-grid { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:clamp(32px,5.5vw,70px); padding:42px 0; align-items:center; }
+.home-photo { overflow:hidden; background:#e9ece7; border-radius:3px; }
+.home-photo-image { display:block; width:100%; aspect-ratio:.98; object-fit:cover; object-position:51% 45%; }
+.home-copy h1 { margin:8px 0 14px; font-size:clamp(44px,5vw,66px); }
+.home-copy .position { font-size:19px; }
+.home-copy .summary { line-height:1.85; }
+.profile-more { margin-top:11px; font-weight:650; }
 .affiliation,.venue { color:var(--teal); font-size:14px; font-weight:700; }
 .profile h1 { margin:12px 0 14px; }
 .position { font-size:21px; font-weight:650; }
@@ -72,11 +71,7 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .timeline { margin:20px 0 0; }
 .timeline li { display:grid; grid-template-columns:135px minmax(0,1fr); gap:14px; border-top:1px solid var(--line); padding:10px 0; }
 .timeline time,.cohort h4 { color:var(--teal); font-size:14px; font-weight:650; }
-.photo-slot { border:1px solid var(--line); background:#fff; }
-.photo-slot img,.photo-space { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
-.photo-space { display:grid; place-items:center; background:#eff3ef; border:9px solid white; outline:1px dashed #9db1ab; outline-offset:-14px; }
-.photo-space span { color:#4a645e; font-size:14px; }
-.photo-slot figcaption,.paper-figure figcaption { padding:10px 14px; color:var(--sub); font-size:14px; }
+.paper-figure figcaption { padding:10px 14px; color:var(--sub); font-size:14px; }
 .page-top { padding-bottom:35px; }
 .page-top h1 { font-size:clamp(40px,4.8vw,61px); margin-bottom:20px; }
 .jump a { font-weight:640; }
@@ -104,24 +99,32 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .cohort h4 { font-size:17px; }.cohort ul { margin:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 32px; }
 .cohort li { display:block; border-bottom:1px solid #e0e6e2; padding:0 0 9px; }
 .cohort b { font-size:16px; }.cohort b span,.cohort li div { color:var(--sub); font-size:14px; }
+.student-heading { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.degree-tag { color:var(--teal); font-size:12px; font-weight:650; }
+.cohort .student-topics { margin-top:4px; }
+.cohort .student-topics p { margin:0 0 3px; color:var(--sub); font-size:14px; }
+.cohort .student small { display:block; margin-top:4px; color:#536b71; font-size:12px; }
+.people-areas .cards { margin-top:12px; }
 summary { font-size:24px; font-weight:650; cursor:pointer; }
 .destinations,.album { display:grid; grid-template-columns:1fr 1fr; gap:20px 36px; margin-top:20px; }.destinations h3 { font-size:18px; }.destinations p { margin-top:6px; }
 footer { background:#173734; color:#eff6ef; padding:28px 0; }footer .wrap { display:flex; justify-content:space-between; gap:20px; }footer a,footer b,footer a:hover { color:#d7ebe3; }footer p {font-size:14px; margin-top:5px;}
 .skip { position:absolute; left:-9999px; top:3px; background:white; }.skip:focus { left:4px; z-index:8; }
 @media(max-width:920px){
  .wrap{width:calc(100% - 50px)} .brand span{max-width:200px;font-size:15px}.bar,nav{gap:15px}
- .profile-grid{gap:30px;grid-template-columns:minmax(0,1fr) 195px}.cards,.highlights{gap:15px}
+ .profile-grid{gap:30px;grid-template-columns:minmax(0,1fr) 195px}.home-grid{gap:30px}.cards,.highlights{gap:15px}
  .history{gap:26px}.track-head,.study{gap:24px}
 }
 @media(max-width:700px){
  .wrap{width:calc(100% - 36px)}.bar{flex-wrap:wrap;gap:11px;padding:13px 0}.brand{gap:9px}.brand b{font-size:30px}.brand span{padding-left:9px;max-width:205px}.language{margin-left:auto;font-size:14px}
  nav{order:3;width:100%;justify-content:space-between}nav a{font-size:14px}.section{padding:30px 0}
+ .home-grid{grid-template-columns:1fr;gap:22px;padding:24px 0 29px}.home-photo-image{aspect-ratio:1.45;object-position:51% 44%}.home-copy h1{font-size:44px}.home-copy .position{font-size:17px}
  .profile-grid{display:block;position:relative;padding:30px 0}.profile h1{margin:10px 0;font-size:46px}.portrait{position:absolute;right:0;top:30px;width:80px}.portrait img{height:100px}
  .profile .affiliation{font-size:13px;max-width:calc(100% - 96px)}.profile .position{font-size:17px}.profile .position,.profile .rank{max-width:calc(100% - 88px)}.rank{font-size:14px}
  .contact{gap:5px 13px}.summary{font-size:16px}.cards,.highlights,.album,.destinations,.history,.track-head,.study{grid-template-columns:1fr;gap:17px}
  .timeline li{grid-template-columns:112px 1fr;gap:8px}.timeline time{font-size:12px}.track{padding:25px 0}.study{gap:8px}.reference h3{font-size:16px}
  .pub-year{grid-template-columns:1fr;gap:14px}.cohort{grid-template-columns:1fr;gap:8px}.cohort ul{gap:10px 18px}
- footer .wrap{flex-direction:column}.intro{font-size:17px}.people-lead img{width:60px;height:75px}
+ .cohort ul{grid-template-columns:1fr}
+ footer .wrap{flex-direction:column}.intro{font-size:17px}
 }
 @media(max-width:370px){.brand span{max-width:145px;font-size:13px}.wrap{width:calc(100% - 26px)}.cohort ul{grid-template-columns:1fr}}
 @media(max-width:700px){.bar{display:grid;grid-template-columns:minmax(0,1fr) auto}.bar nav{grid-column:1/-1;grid-row:2}.bar .brand{min-width:0}.bar .language{grid-column:2;grid-row:1}}

@@ -416,5 +416,171 @@
       "基于意图识别和轨迹预测的车辆变道行为预测研究",
       "Predicting lane changes from intent and trajectories"
     ]
+  },
+  {
+    "name": "揭京峰",
+    "roman": "Jingfeng Jie",
+    "degree": "M",
+    "start": "2026-09",
+    "topic": ["智能制造垂域模型评价与验证", "Evaluation and validation of domain models for intelligent manufacturing"]
+  },
+  {
+    "name": "任奕铭",
+    "roman": "Yiming Ren",
+    "degree": "M",
+    "start": "2026-09",
+    "topic": ["智能产品概念设计", "Conceptual design of intelligent products"]
+  },
+  {
+    "name": "高致远",
+    "roman": "Zhiyuan Gao",
+    "degree": "M",
+    "start": "2026-09",
+    "topic": ["智能制造校验评估智能体", "Verification and evaluation agents for intelligent manufacturing"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "禹文凯",
+    "roman": "Wenkai Yu",
+    "degree": "M",
+    "start": "2026-09",
+    "topic": ["人机交互设计与评价", "Human-computer interaction design and evaluation"],
+    "topic_extra": ["基于大语言模型的设备评价", "Equipment evaluation with large language models"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "罗忠兴",
+    "roman": "Zhongxing Luo",
+    "degree": "D",
+    "start": "2025-09",
+    "topic": ["工业互联网云边协同优化控制", "Cloud-edge collaborative control for the Industrial Internet"],
+    "coadvisor": ["王国新老师", "Guoxin Wang"]
+  },
+  {
+    "name": "李俐君",
+    "roman": "Lijun Li",
+    "degree": "D",
+    "start": "2025-09",
+    "topic": ["面向小样本的代理模型与制造工艺优化", "Surrogate modelling and manufacturing process optimisation with limited data"],
+    "coadvisor": ["王国新老师", "Guoxin Wang"]
+  },
+  {
+    "name": "赵明浩",
+    "roman": "Minghao Zhao",
+    "degree": "M",
+    "start": "2024-09",
+    "topic": ["设备健康管理与故障诊断", "Equipment health management and fault diagnosis"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "王婧伊",
+    "roman": "Jingyi Wang",
+    "degree": "M",
+    "start": "2024-09",
+    "topic": ["产品概念设计代码生成", "Code generation for product concept design"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "吴昱晓",
+    "roman": "Yuxiao Wu",
+    "degree": "M",
+    "start": "2024-09",
+    "topic": ["机器人任务安全规划", "Safe planning for robot tasks"],
+    "coadvisor": ["付铁老师", "Tie Fu"]
+  },
+  {
+    "name": "李全福",
+    "roman": "Quanfu Li",
+    "degree": "M",
+    "start": "2024-09",
+    "topic": ["机器人具身智能控制与任务规划", "Embodied robot control and task planning"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "罗学仪",
+    "roman": "Xueyi Luo",
+    "degree": "M",
+    "start": "2025-09",
+    "topic": ["基于大语言模型的设备评价", "Equipment evaluation with large language models"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "陶洪月",
+    "roman": "Hongyue Tao",
+    "degree": "M",
+    "start": "2025-09",
+    "topic": ["概念设计空间演化", "Evolution of conceptual design spaces"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "海日罕",
+    "roman": "Rihan Hai",
+    "degree": "M",
+    "start": "2024-09",
+    "topic": ["复杂物流系统运筹优化", "Operations research for complex logistics systems"],
+    "coadvisor": ["项溪老师", "Xi Xiang"]
+  },
+  {
+    "name": "张佳妮",
+    "roman": "Jiani Zhang",
+    "degree": "M",
+    "start": "2025-09",
+    "topic": ["人机交互设计与评价", "Human-computer interaction design and evaluation"]
+  },
+  {
+    "name": "杨一凡",
+    "roman": "Yifan Yang",
+    "degree": "M",
+    "start": "2025-09",
+    "topic": ["混合工艺预测及仿真建模", "Prediction and simulation modelling for hybrid processes"],
+    "coadvisor": ["闻敬谦老师", "Jingqian Wen"]
+  },
+  {
+    "name": "许艺凡",
+    "roman": "Yifan Xu",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["人机协同概念设计", "Human-AI collaborative conceptual design"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "于建海",
+    "roman": "Jianhai Yu",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["设备健康管理与多模态故障诊断", "Equipment health management and multimodal fault diagnosis"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "周庆文",
+    "roman": "Qingwen Zhou",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["多模态融合条件下的具身智能控制", "Embodied intelligence control with multimodal fusion"],
+    "coadvisor": ["谢剑老师", "Jian Xie"]
+  },
+  {
+    "name": "刘海渤",
+    "roman": "Haibo Liu",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["产品概念设计评价与收敛过程", "Evaluation and convergence in product concept design"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "陈佳杨",
+    "roman": "Jiayang Chen",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["风电场系统优化设计与控制", "System design and control for wind farms"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
+  },
+  {
+    "name": "朱寿林",
+    "roman": "Shoulin Zhu",
+    "degree": "M",
+    "start": "2023-09",
+    "topic": ["无人机群对抗自博弈演化", "Self-play evolution for adversarial drone swarms"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"]
   }
 ]
