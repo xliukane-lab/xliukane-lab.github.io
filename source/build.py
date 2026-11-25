@@ -2,7 +2,7 @@ from pathlib import Path
 from html import escape
 from collections import defaultdict
 import json
-from content import LAB_ZH, LAB_EN, FACULTY, SCHOLAR, EMAIL, CAREER, TRACKS, WORKS
+from content import LAB_ZH, LAB_EN, FACULTY, SCHOLAR, EMAIL, BIO, EDUCATION, APPOINTMENTS, COURSES, TRACKS, WORKS
 
 SOURCE = Path(__file__).resolve().parent
 SITE = SOURCE.parent
@@ -34,7 +34,7 @@ class Site:
         navigation=''.join(f'<a href="{slug}.html"'+(' aria-current="page"' if slug==page else '')+f'>{label}</a>' for slug,label in self.nav.items())
         language=self.t('English','中文')
         switch=f'<a class="language" lang="{self.t("en","zh-CN")}" href="{self.other}{page}.html">{language}</a>'
-        header=f'<header><div class="wrap bar">{link("index.html","<b>"+self.name+"</b><span>"+self.t("个人主页 · ISDO","Personal homepage · ISDO")+"</span>","brand")}<nav aria-label="{self.t("主导航","Main navigation")}">{navigation}</nav>{switch}</div></header>'
+        header=f'<header><div class="wrap bar">{link("index.html","<b>"+self.name+"</b>","brand")}<nav aria-label="{self.t("主导航","Main navigation")}">{navigation}</nav>{switch}</div></header>'
         footer=f'<footer><div class="wrap"><div><b>ISDO</b><p lang="en">{LAB_EN}</p><p lang="zh-CN">{LAB_ZH}</p></div><div>{link("mailto:"+EMAIL,EMAIL)}<p>{self.t("北京理工大学机械与车辆学院","School of Mechanical Engineering, Beijing Institute of Technology")}</p></div></div></footer>'
         html=f"""<!doctype html>
 <html lang="{self.lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{title} | ISDO</title><link rel="stylesheet" href="{self.assets}style.css"><link rel="alternate" hreflang="{self.t('en','zh-CN')}" href="{self.other}{page}.html"></head>
@@ -46,25 +46,32 @@ class Site:
         p=PAPERS[key]
         authors=', '.join('<b>'+escape(a)+'</b>' if a.lower()=='xin liu' else escape(a) for a in p['authors'])
         return f'<div class="reference"><span class="venue">{escape(p["journal"])} · {p["year"]}</span><h3>{link("https://doi.org/"+p["doi"],escape(p["title"])+" ↗")}</h3><p>{authors}</p></div>'
+    def experiences(self):
+        columns = []
+        for title, entries in [(self.t('个人经历', 'Education'), EDUCATION),
+                               (self.t('工作经历', 'Appointments'), APPOINTMENTS)]:
+            rows = []
+            for date, zh, en in entries:
+                when = date.replace('至今', 'present') if self.i else date
+                rows.append(f'<li><time>{when}</time><div>{self.t(zh,en)}</div></li>')
+            columns.append(f'<section><h2>{title}</h2><ul class="timeline">{"".join(rows)}</ul></section>')
+        return '<div class="wrap section experience-grid">'+''.join(columns)+'</div>'
+
+    def courses(self):
+        head = self.t(('课程','专业 / 对象','课程性质'), ('Course','Programme / audience','Course type'))
+        headings = ''.join(f'<th scope="col">{column}</th>' for column in head)
+        rows = ''.join('<tr>'+''.join(f'<td>{escape(self.pair(value))}</td>' for value in course)+'</tr>' for course in COURSES)
+        return (f'<section class="wrap section teaching"><h2>{self.t("课程与研究指导", "Teaching")}</h2>'
+                f'<div class="table-scroll"><table class="courses"><thead><tr>{headings}</tr></thead>'
+                f'<tbody>{rows}</tbody></table></div></section>')
     def pi(self):
         person=self.t('刘欣','Xin Liu')
         affiliation=self.t('北京理工大学机械与车辆学院','School of Mechanical Engineering · Beijing Institute of Technology')
         role=self.t('工业与智能系统工程研究所所长','Director, Institute of Industrial and Intelligent Systems Engineering')
         rank=self.t('特别副研究员 / 预聘助理教授 · 硕士生导师','Special Associate Research Fellow / Tenure-track Assistant Professor · Master’s Supervisor')
-        summary=self.t('我关注数据能为工程决策提供什么依据。我的研究从设备和环境的观测出发，考察码头车辆该怎样调度、风电场下一小时可能出现哪些风况，以及工程师怎样把模糊需求变成可以比较的设计方案。','My research asks what operational data can tell an engineer before a decision is made. I study how to dispatch vehicles at a container terminal, what winds a farm may experience in the next hour, and how engineers can turn ambiguous requirements into design alternatives they can compare.')
-        address=self.t('北京市海淀区 · 北京理工大学中关村校区第一教学楼 344A','Room 344A, Teaching Building 1, Zhongguancun Campus, BIT, Beijing')
-        hero=f'<section class="profile"><div class="wrap profile-grid"><div><div class="affiliation">{affiliation}</div><h1>{person}</h1><p class="position">{role}</p><p class="rank">{rank}</p><p class="summary">{summary}</p><div class="contact">{link("mailto:"+EMAIL,EMAIL)} {link(FACULTY,self.t("学院主页","Faculty profile")+" ↗")} {link(SCHOLAR,"Google Scholar ↗")}</div><small>{address}</small></div><figure class="portrait"><img src="{self.assets}xin-liu.jpg" width="460" height="690" alt="{person}"></figure></div></section>'
-        timeline = ''.join(f'<li><time>{escape(row[0])}</time><div>{row[1+self.i]}</div></li>' for row in CAREER)
-        education = self.t('个人履历','Education and appointments')
-        teaching = self.t('课程与研究指导','Teaching and supervision')
-        teaching_text = self.t(
-            '刘欣为本科生讲授《智能制造系统》和《制造系统感知分析与决策》，并参与研究生《工程管理》课程教学。他指导的学生课题涵盖制造系统调度、风电功率预测和生成式产品概念设计。',
-            'Xin Liu teaches undergraduate courses on intelligent manufacturing systems and on sensing, analysis and decision-making in manufacturing. He also teaches engineering management at the graduate level. His students study problems ranging from manufacturing scheduling and wind power forecasting to generative product design.')
-        team_link = link('people.html', self.t('查看团队成员与学生课题','Meet the team and explore student projects')+' →')
-        biography = (f'<section class="wrap section history"><div><h2>{education}</h2>'
-                     f'<ol class="timeline">{timeline}</ol></div><div class="teaching">'
-                     f'<h2>{teaching}</h2><p>{teaching_text}</p>{team_link}</div></section>')
-        self.shell('pi',person+' · PI',hero+biography)
+        summary=self.pair(BIO)
+        hero=f'<section class="profile"><div class="wrap profile-grid"><div><div class="affiliation">{affiliation}</div><h1 class="person-name">{self.t("刘  欣",person)}</h1><p class="position">{role}</p><p class="rank">{rank}</p><p class="summary">{summary}</p><div class="contact">{link("mailto:"+EMAIL,EMAIL)} {link(FACULTY,self.t("学院主页","Faculty profile")+" ↗")} {link(SCHOLAR,"Google Scholar ↗")}</div></div><figure class="portrait"><img src="{self.assets}xin-liu.jpg" width="460" height="690" alt="{person}"></figure></div></section>'
+        self.shell('pi',person,hero+self.experiences()+self.courses())
 
     def home(self):
         affiliation = self.t('北京理工大学机械与车辆学院',
@@ -73,29 +80,26 @@ class Site:
                       'Director, Institute of Industrial and Intelligent Systems Engineering')
         rank = self.t('特别副研究员 / 预聘助理教授 · 硕士生导师',
                       'Special Associate Research Fellow / Tenure-track Assistant Professor · Master’s Supervisor')
-        summary = self.t(
-            '我主要从事工业智能研究，关注数据科学与智能优化算法在生产制造、物流、可再生能源和产品设计中的应用。研究工作从真实工程问题出发，探索如何改进系统预测、运行决策和设计方案。',
-            'My research focuses on industrial intelligence and the use of data science and intelligent optimisation in manufacturing, logistics, renewable energy and product design. Starting from engineering problems, I study ways to improve system forecasting, operational decisions and design solutions.')
+        summary = self.pair(BIO)
         faculty_link = link(FACULTY, self.t('学院教师主页', 'Faculty profile')+' ↗')
         scholar_link = link(SCHOLAR, 'Google Scholar ↗')
-        profile_link = link('pi.html', self.t('个人履历与教学', 'Full profile and teaching')+' →')
+        profile_link = link('pi.html', self.t('个人资料', 'Profile')+' →')
         hero = (
             f'<section class="profile profile-home"><div class="wrap home-grid">'
             f'<figure class="home-photo"><img class="home-photo-image" src="{self.assets}xin-liu-life.jpg" '
             f'alt="{self.t("刘欣在罗马斗兽场参观时的生活照", "Xin Liu visiting the Colosseum in Rome")}"></figure>'
-            f'<div class="home-copy"><p class="affiliation">{affiliation}</p><h1>{self.name}</h1>'
+            f'<div class="home-copy"><p class="affiliation">{affiliation}</p><h1 class="person-name">{self.t("刘  欣",self.name)}</h1>'
             f'<p class="position">{role}</p><p class="rank">{rank}</p><p class="summary">{summary}</p>'
             f'<div class="contact">{link("mailto:"+EMAIL,EMAIL)} {faculty_link} {scholar_link}</div>'
             f'<p class="profile-more">{profile_link}</p></div></div></section>')
-        cards=''.join(f'<a class="direction" href="research.html#{tr["id"]}"><h3>{self.pair(tr["name"])} <span>↗</span></h3><p>{self.pair(tr["intro"])}</p></a>' for tr in TRACKS)
+        cards=''.join(f'<a class="direction" href="research.html#{tr["id"]}"><h3>{self.pair(tr["name"])} <span>↗</span></h3><p>{self.pair(tr["intro"])}</p><p class="project-label">{self.pair(tr["project"])}</p></a>' for tr in TRACKS)
         directions=f'<section class="wrap section"><h2>{self.t("研究方向","Research areas")}</h2><div class="cards">{cards}</div></section>'
         spot=[]
         for tr in TRACKS:
             k=tr['works'][0]
-            p=PAPERS[k]
-            spot.append(f'<article><p class="venue">{escape(p["journal"])} · {p["year"]}</p><h3>{link("research.html#work-"+k,self.pair(WORKS[k][0])+" ↗")}</h3><p>{self.pair(WORKS[k][1])}</p></article>')
+            spot.append(f'<article><h3>{link("research.html#work-"+k,self.pair(WORKS[k][0])+" ↗")}</h3><p>{self.pair(WORKS[k][1])}</p></article>')
         typical=f'<section class="tint"><div class="wrap section"><h2>{self.t("典型论文","Research highlights")}</h2><div class="highlights">{"".join(spot)}</div></div></section>'
-        self.shell('index',self.name,hero+directions+typical)
+        self.shell('index',self.name,hero+self.experiences()+directions+typical)
     def research(self):
         navigation=''.join(link('#'+tr['id'],self.pair(tr['name'])) for tr in TRACKS)
         body=f'<div class="wrap section page-top"><h1>{self.t("研究","Research")}</h1><div class="jump">{navigation}</div></div>'
@@ -104,22 +108,19 @@ class Site:
             k=tr['figure']
             figlink=self.assets+f'figure-{k}.webp'
             caption=self.pair(tr['fig'])
-            fig=f'<figure class="paper-figure"><a href="{figlink}" aria-label="{self.t("放大论文插图","Enlarge figure")}"><img src="{figlink}" alt="{caption}" loading="lazy"></a><figcaption>{caption} {link("https://doi.org/"+PAPERS[k]["doi"],self.t("原文","Source")+" ↗")}</figcaption></figure>'
-            left=f'<div><h2>{self.pair(tr["name"])}</h2><p class="intro">{self.pair(tr["intro"])}</p><p>{self.pair(tr["scope"])}</p><p class="project"><b>{self.t("相关项目","Projects")}</b>{self.pair(tr["project"])}</p></div>'
+            fig=f'<figure class="paper-figure"><a href="{figlink}" aria-label="{self.t("放大论文插图","Enlarge figure")}"><img src="{figlink}" alt="{caption}" loading="lazy"></a><figcaption>{caption}</figcaption></figure>'
+            left=f'<div><h2>{self.pair(tr["name"])}</h2><p class="intro">{self.pair(tr["intro"])}</p><p class="keywords"><b>{self.t("研究关键词：","Keywords: ")}</b>{self.pair(tr["keywords"])}</p><p class="project-label">{self.pair(tr["project"])}</p></div>'
             examples=[]
             for key in tr['works']:
                 title,summary=WORKS[key]
                 examples.append(f'<article class="study" id="work-{key}"><div><h3>{self.pair(title)}</h3><p>{self.pair(summary)}</p></div>{self.reference(key)}</article>')
-            extra=''
-            if tr['id']=='energy':
-                extra=link('https://doi.org/'+PAPERS['yaw']['doi'],self.t('延伸阅读 · 多机组协同偏航控制','Related work · Coordinated yaw control for a turbine cluster')+' ↗','more')
-            sections.append(f'<section class="track wrap" id="{tr["id"]}"><div class="track-head">{left}{fig}</div><h3 class="section-label">{self.t("代表工作","Selected studies")}</h3>{"".join(examples)}{extra}</section>')
+            sections.append(f'<section class="track wrap" id="{tr["id"]}"><div class="track-head">{left}{fig}</div><h3 class="section-label">{self.t("代表工作","Selected studies")}</h3>{"".join(examples)}</section>')
         self.shell('research',self.nav['research'],body+''.join(sections))
     def publications(self):
         by_year=defaultdict(list)
         for key,p in PAPERS.items():
             by_year[p['year']].append(key)
-        body=f'<section class="wrap section page-top"><h1>{self.t("论文成果","Publications")}</h1><p class="intro">{self.t("本页收录可通过 DOI 查阅的期刊与会议论文。更多成果请见按发表时间排序的学术主页。","Browse journal and conference papers with DOI links. The Google Scholar profile lists additional work by publication date.")}</p>{link(SCHOLAR,"Google Scholar ↗","more")}</section>'
+        body=f'<section class="wrap section page-top"><h1>{self.t("论文成果","Publications")}</h1>{link(SCHOLAR,"Google Scholar ↗","more")}</section>'
         for year,keys in sorted(by_year.items(),reverse=True):
             refs=''.join(self.reference(k) for k in sorted(keys,key=lambda x:PAPERS[x]['title']))
             body+=f'<section class="wrap pub-year"><h2>{year}</h2><div>{refs}</div></section>'
@@ -133,35 +134,31 @@ class Site:
             entries=[]
             for s in group:
                 display=s['name'] if not self.i else f'{s["roman"]} <span lang="zh-CN">{s["name"]}</span>'
-                degree = self.t('博士' if s['degree'] == 'D' else '硕士',
-                                'PhD' if s['degree'] == 'D' else 'Master’s')
                 topics = [s['topic']] + ([s['topic_extra']] if s.get('topic_extra') else [])
-                topic_text = ''.join(f'<p>{escape(self.pair(topic))}</p>' for topic in topics)
+                topic_text = '；'.join(escape(self.pair(topic)) for topic in topics) if not self.i else '; '.join(escape(self.pair(topic)) for topic in topics)
                 cotutor = ''
                 if s.get('coadvisor'):
-                    cotutor = f'<small>{self.t("协同指导：", "Co-supervised by ")}{escape(self.pair(s["coadvisor"]))}</small>'
+                    cotutor = f'<span class="coadvisor">{self.t("（", " (")}{escape(self.pair(s["coadvisor"]))}{self.t("协同指导）", ", co-supervisor)")}</span>'
                 entries.append(
                     f'<li class="student" data-name="{escape(s["name"], quote=True)}" '
                     f'data-degree="{s["degree"]}" data-year="{year}"><div class="student-heading">'
-                    f'<b>{display}</b><span class="degree-tag">{degree}</span></div>'
-                    f'<div class="student-topics">{topic_text}</div>{cotutor}</li>')
+                    f'<b>{display}</b></div>'
+                    f'<div class="student-topics">{topic_text}{cotutor}</div></li>')
             rows+=f'<div class="cohort"><h4>{year}</h4><ul>{"".join(entries)}</ul></div>'
         return rows
     def people(self):
         degrees=[s for s in STUDENTS if s['degree']=='M']
         doctorate=[s for s in STUDENTS if s['degree']=='D' and not s.get('end')]
-        current=self.roster([s for s in degrees if not s.get('end')])
-        alumni=self.roster([s for s in degrees if s.get('end')])
+        current=self.roster([s for s in degrees if not s.get('end') and s.get('status') != 'graduated'])
+        alumni=self.roster([s for s in degrees if s.get('end') or s.get('status') == 'graduated'])
         doctoral=self.roster(doctorate)
         undergrad=self.roster([s for s in STUDENTS if s['degree']=='B'])
         person=self.t('刘欣','Xin Liu')
-        header=f'<section class="wrap section page-top"><h1>{self.t("团队成员","People")}</h1><div class="people-lead"><div><h2>{person}</h2><p>{self.t("课题组负责人","Group lead")} · {link("pi.html",self.t("个人资料","Profile"))}</p></div></div></section>'
+        header=f'<section class="wrap section page-top"><h1>{self.t("团队成员","People")}</h1></section>'
         def heading(title,en): return f'<h2>{self.t(title,en)}</h2>'
-        areas=''.join(f'<a class="direction" href="research.html#{tr["id"]}"><h3>{self.pair(tr["name"])} <span>↗</span></h3><p>{self.pair(tr["intro"])}</p></a>' for tr in TRACKS)
-        body=f'<section class="wrap team-section people-areas">{heading("研究方向","Research areas")}<div class="cards">{areas}</div></section>'
-        body+=f'<section class="wrap team-section doctoral-section">{heading("博士研究生","Doctoral students")}<p>{self.t("按入学年份列示。","Grouped by entry year.")}</p>{doctoral}</section>'
-        body+=f'<section class="wrap team-section current-section">{heading("硕士研究生","Master’s students")}<p>{self.t("按入学年份列示。","Grouped by entry year.")}</p>{current}</section>'
-        body+=f'<section class="wrap team-section alumni-section">{heading("历届硕士生","Master’s alumni")}<p>{self.t("按入学年份列示。","Grouped by entry year.")}</p>{alumni}</section>'
+        body=f'<section class="wrap team-section doctoral-section">{heading("博士研究生","Doctoral students")}{doctoral}</section>'
+        body+=f'<section class="wrap team-section current-section">{heading("硕士研究生","Master’s students")}{current}</section>'
+        body+=f'<section class="wrap team-section alumni-section">{heading("已毕业校友","Alumni")}{alumni}</section>'
         body+=f'<section class="wrap team-section undergraduate-section"><details><summary>{self.t("本科毕业设计","Undergraduate thesis projects")}</summary>{undergrad}</details></section>'
         dest=''.join(f'<div><h3>{self.pair(group)}</h3><p>{self.pair(names)}</p></div>' for group,names in DESTINATIONS)
         body+=f'<section class="tint"><div class="wrap section">{heading("毕业生去向","Alumni destinations")}<div class="destinations">{dest}</div></div></section>'

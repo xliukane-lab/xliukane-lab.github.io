@@ -1,45 +1,99 @@
-LAB_ZH = "智能系统设计与优化组"
+LAB_ZH = "智能系统设计与优化实验室"
 LAB_EN = "Intelligent System Design and Optimization Lab"
 FACULTY = "https://me.bit.edu.cn/szdw/jsml/zzgcx/gygcyjs/gygcyjsqnjs/127ba53935674ff2b9f8f99c90305632.htm"
 SCHOLAR = "https://scholar.google.com/citations?hl=en&user=9hSdRHQAAAAJ&view_op=list_works&sortby=pubdate"
 EMAIL = "xliu826@bit.edu.cn"
 
-CAREER = [
-    ("2021.12–", "北京理工大学机械与车辆学院，任教至今。2021 年 12 月至 2025 年 7 月在学院从事博士后研究。", "Faculty, School of Mechanical Engineering, Beijing Institute of Technology. Postdoctoral research at BIT from December 2021 to July 2025."),
-    ("2021.09–2021.10", "香港城市大学数据科学学院，科研助理。", "Research Assistant, School of Data Science, City University of Hong Kong."),
-    ("2017.09–2021.08", "香港城市大学数据科学学院，获数据科学博士学位。", "PhD in Data Science, City University of Hong Kong."),
-    ("2016.08–2017.05", "中国电子信息产业集团有限公司第六研究所，项目助理。", "Project Assistant, Sixth Research Institute of China Electronics Corporation."),
-    ("2015.10–2016.06", "本科期间赴德国卡尔斯鲁厄理工学院交流，学习机械工程。", "Visiting student in mechanical engineering, Karlsruhe Institute of Technology, during undergraduate studies."),
-    ("2012.09–2016.06", "北京理工大学，获工业工程专业工学学士学位。", "Bachelor of Engineering in Industrial Engineering, Beijing Institute of Technology.")
+# Each language pair contains Chinese followed by English.
+BIO = (
+    "研究方向为工业智能，关注数据科学与智能优化算法在生产制造、物流、可再生能源和产品设计中的交叉融合，通过数据挖掘理论开展装备/系统运行环境的不确定性分析预测，并创新智能优化技术提升装备控制及系统调度效能。",
+    "My research focuses on industrial intelligence, bringing data science and intelligent optimisation into manufacturing, logistics, renewable energy and product design. I use data mining to analyse and forecast uncertainty in the operating environments of equipment and systems, and develop optimisation methods to improve equipment control and system scheduling."
+)
+EDUCATION = [
+    ("2012-2016", "北京理工大学 · 工业工程 · 本科", "Beijing Institute of Technology · Industrial Engineering · Bachelor’s degree"),
+    ("2015-2016", "德国卡尔斯鲁厄理工学院 · 机械工程 · 访学", "Karlsruhe Institute of Technology, Germany · Mechanical Engineering · Visiting student"),
+    ("2017-2021", "香港城市大学 · 数据科学 · 直博", "City University of Hong Kong · Data Science · Direct-entry PhD")
+]
+APPOINTMENTS = [
+    ("2016-2017", "中国电子信息产业集团有限公司第六研究所 · 工程师", "Sixth Research Institute of China Electronics Corporation · Engineer"),
+    ("2021", "香港城市大学 · 数据科学学院 · 科研助理", "City University of Hong Kong · School of Data Science · Research Assistant"),
+    ("2021-至今", "北京理工大学 · 机械与车辆学院 · 预聘助理教授", "Beijing Institute of Technology · School of Mechanical Engineering · Tenure-track Assistant Professor")
+]
+COURSES = [
+    (("《智能制造系统》", "Intelligent Manufacturing Systems"), ("工业工程", "Industrial Engineering"), ("专业选修课", "Programme elective")),
+    (("《制造系统感知分析与决策》", "Sensing, Analysis and Decision-Making for Manufacturing Systems"), ("智能制造工程", "Intelligent Manufacturing Engineering"), ("专业核心课", "Core course")),
+    (("《工程管理》", "Engineering Management"), ("研究生", "Graduate studies"), ("公共课", "University-wide course")),
+    (("《复杂装备健康管理与运维》", "Health Management, Operations and Maintenance of Complex Equipment"), ("工业工程", "Industrial Engineering"), ("专业限选课", "Restricted elective"))
 ]
 
-# Paired strings store Chinese first and English second.
 TRACKS = [
-    dict(id="manufacturing", name=("智能制造与物流","Intelligent Manufacturing and Logistics"),
-         intro=("生产计划会被设备故障打断，物流决策也会受到车辆位置和订单变化的影响。我们研究怎样把现场数据转化为调度依据，并让设备状态参与下一步生产决策。","Equipment failures disrupt production plans, while vehicle positions and incoming jobs change the choices available to a dispatcher. We study how operational data and machine condition can inform the next production or logistics decision."),
-         scope=("在化工产品生产中，我们关注工艺参数与产品性能之间的关系，并研究数字化监控和数字孪生如何支持过程分析。面向设备运行，我们研究故障预测与健康管理（PHM）。面向制造任务，我们开发工业智能体，并研究怎样在具体工况下评价和验证垂域模型。","For chemical product manufacturing, we study how process parameters affect product performance and how digital monitoring and digital twins support process analysis. Our work on equipment covers prognostics and health management (PHM). We also develop industrial agents and investigate how to evaluate and validate domain-specific models under representative operating conditions."),
-         project=("参与国防科研专项，承担与工艺建模及生产过程数字化有关的分承研任务。另承担垂域模型评价与虚拟验证相关子课题。","The group contributes to defence research through work on process modelling and manufacturing digitalisation. A separate subproject addresses evaluation and virtual validation of domain-specific models."),
-         works=["agv","fault","vessel"], figure="agv", fig=("原文图 2 展示集装箱从船侧到堆场的卸载流程。岸桥和场桥之间的运输任务由 AGV 衔接。","Figure 2 traces an unloading operation from vessel to yard. AGVs connect the quay cranes to the yard cranes.")),
-    dict(id="energy",name=("可再生能源","Renewable Energy"),
-         intro=("在风电场，同一股来风先后经过不同机组。我们利用这种空间联系估计未来风况和出力范围，进而研究如何在来风不确定时协调多台机组的运行。","As a wind front crosses a farm, turbines encounter it at different times. We use that spatial relationship to estimate future winds and power output, then study how turbines can coordinate their operation under uncertain inflow."),
-         scope=("风机传感器掉线会留下不完整的运行记录。我们从数据修复出发，建立能表达多种可能风况的预测模型，再将预测信息用于风场优化控制。以集群偏航为例，一台机组改变朝向会影响下游机组，因此需要从整个风场考察控制决策。","When sensors drop out, forecasts must rely on incomplete records. We study how to reconstruct those records, generate possible wind trajectories and bring forecasts into wind farm control. In coordinated yaw control, for example, rotating one turbine changes conditions downstream, so the relevant decision is a farm-level one."),
-         project=("国家自然科学基金青年科学基金项目「容忍缺失数据的可再生能源时空超分辨率场景生成」，刘欣主持，2023.01–2025.12。","NSFC Young Scientists Fund project on spatiotemporal super-resolution scenario generation for renewable energy with missing data. Principal investigator: Xin Liu, January 2023 to December 2025."),
-         works=["wind","prob","impute"], figure="wind", fig=("原文图 4 给出 GAPGAN 的结构。模型根据历史观测学习机组间的关联，并为同一段历史生成多条可能的风速轨迹。","Figure 4 shows how GAPGAN learns links between turbines and generates alternative wind speed trajectories from the same historical record.")),
-    dict(id="design",name=("智能设计","Intelligent Design"),
-         intro=("工程需求常常以一句不完整的描述开始。我们研究怎样挖掘其中的功能需求，让模型在工程知识约束下生成候选概念，再以设计者的判断和代理模型的快速评估逐步改进方案。","An engineering brief often starts with an incomplete description. We investigate how to recover functional requirements, generate concepts grounded in domain knowledge, and refine candidate designs through human judgement and efficient surrogate evaluation."),
-         scope=("在产品概念设计中，我们把自然语言需求组织为功能与结构的关系，使设计师能追溯一个概念从何而来。对于有较大搜索空间的设计任务，则研究如何让代理模型先筛选候选方案，把精细评估集中到有希望的区域。","In conceptual product design, we organise natural-language requirements around functions and structures so designers can trace the basis of a concept. In large design spaces, we investigate how surrogate models can screen alternatives before the more promising ones receive a detailed evaluation."),
-         project=("国家自然科学基金面上项目「群智创新设计空间的协同探索与创新生成理论与方法」，刘欣主持，2024.01–2027.12。","NSFC General Program on collaborative exploration and creative generation in collective-intelligence design spaces. Principal investigator: Xin Liu, January 2024 to December 2027."),
-         works=["design","color","shelf"],figure="design",fig=("原文图 1 展示 KnowLoop 的完整流程。需求结构化之后，领域知识图谱和专家反馈共同引导概念方案的生成。","Figure 1 traces the KnowLoop workflow from structured requirements to concept generation guided by a domain knowledge graph and expert feedback."))
+    dict(
+        id="manufacturing",
+        name=("智能制造与物流", "Intelligent Manufacturing and Logistics"),
+        intro=("在以大规模定制为主题下的新一代智能制造模式中，系统存在多种复杂的内外扰动。我们研究怎样把现场数据转化为决策依据，开展布局设计、生产调度、设备健康管理、工艺优化等相关垂域模型研发及验证，综合实现TQCSE全面提升。",
+               "Intelligent manufacturing for mass customisation faces complex internal and external disturbances. We turn operational data into a basis for decisions, developing and validating domain models for layout design, production scheduling, equipment health management and process optimisation to improve TQCSE performance."),
+        keywords=("生产系统设计、垂域模型评价、设备健康管理、工艺优化设计、代理模型预测、生产调度",
+                  "Production system design; domain model evaluation; equipment health management; process design optimisation; surrogate prediction; production scheduling"),
+        project=("科技部重大专项课题", "Major project of the Ministry of Science and Technology"),
+        works=["agv", "fault"],
+        figure="agv",
+        fig=("堆场无人导引车调度场景", "AGV scheduling in a container terminal yard")
+    ),
+    dict(
+        id="energy",
+        name=("可再生能源", "Renewable Energy"),
+        intro=("以双碳战略为导向，着力于解决风电系统的设计、分析预测与运行控制，通过时序预测揭示可再生能源系统短期运行模式，结合优化理论提升可再生能源系统运行效能。",
+               "Guided by carbon peaking and carbon neutrality goals, our research addresses the design, analysis, forecasting and operational control of wind energy systems. Time-series forecasting reveals short-term operating patterns, while optimisation methods improve system performance."),
+        keywords=("时间序列预测、风速预测、风电预测、时空超分辨率、场景生成、微观布局优化、预测性控制",
+                  "Time-series forecasting; wind speed forecasting; wind power forecasting; spatiotemporal super-resolution; scenario generation; micro-siting optimisation; predictive control"),
+        project=("国家自然科学基金青年基金", "NSFC Young Scientists Fund"),
+        works=["wind", "impute"],
+        figure="wind",
+        fig=("GAPGAN 风速场景生成框架", "GAPGAN framework for wind speed scenario generation")
+    ),
+    dict(
+        id="design",
+        name=("智能设计", "Intelligent Design"),
+        intro=("工程需求常以不完整的文本描述开始。我们研究怎样从模糊的输入中挖掘用户的产品需求，让模型在工程知识约束下生成候选概念，再通过人-大语言模型-知识库多元协同的模式实现概念方案设计生成，在产品生命周期的起点保证产品质量。",
+               "Engineering requirements often begin as incomplete text. We extract product needs from ambiguous input and generate candidate concepts grounded in engineering knowledge. Collaboration among people, large language models and knowledge bases then guides concept generation to support product quality from the beginning of the lifecycle."),
+        keywords=("需求分析、概念设计、知识图谱、生成式设计、自然语言处理",
+                  "Requirements analysis; conceptual design; knowledge graphs; generative design; natural language processing"),
+        project=("国家自然科学基金面上基金", "NSFC General Program"),
+        works=["design", "color"],
+        figure="design",
+        fig=("KnowLoop 人机协同概念设计框架", "KnowLoop framework for human-AI collaborative concept design")
+    )
 ]
 
 WORKS = {
-"agv":(("让码头运输车随任务实时调度","Dispatching AGVs as terminal jobs arrive"),("堆场里的一次派车会同时改变车辆位置和后续任务的等待时间。我们将派车表述为马尔可夫决策过程，以多智能体深度强化学习共同考虑总完工时间和车辆能耗。在不同规模堆场的仿真实验中，论文比较了该策略与基准方法的运行效率和用能表现。","Each dispatch changes both a vehicle’s position and the waiting time for later jobs. We formulated dispatch as a Markov decision process and trained a multi-agent policy to consider makespan and energy use together. Simulations compared operational and energy performance with benchmark policies across several yard sizes.")),
-"fault":(("少量故障样本下识别跨工况故障","Recognising faults across operating conditions"),("转速与负载改变时，振动信号也会变，而新工况的故障样本往往很少。MXProto 融合不同模态共有及特有的特征，再动态调整各原型分类器的权重。论文用公开数据集和消融实验检验两级融合对跨工况诊断的贡献。","Changes in speed and load alter vibration signals, yet faults recorded under the new conditions can be scarce. MXProto fuses shared and modality-specific features, then adjusts the weights of prototype classifiers. Experiments on benchmark datasets and ablation studies examined how both fusion stages contribute to diagnosis.")),
-"vessel":(("船舶部署与空箱调运如何共同决策","Planning vessel deployment and empty-container moves together"),("当集装箱周转时间不确定时，先定船期再补调空箱可能增加租箱成本。研究用两阶段随机规划联立这两类决策，并以加速 Benders 分解求解。在文中数值实验里，相比被动调箱策略，联合方案的总成本平均降低 0.72%。","When container turnaround is uncertain, assigning vessels before arranging empty boxes can increase leasing costs. We linked both decisions in a two-stage stochastic program and solved it with accelerated Benders decomposition. In the reported numerical experiments, integrated planning reduced average total cost by 0.72% relative to reactive repositioning.")),
-"wind":(("为同一段风况生成多种未来情景","Generating alternative futures for a wind farm"),("单条预测曲线难以表达一股来风在机组之间传播的多种可能。GAPGAN 把多机组历史观测转成图，再从同一段历史生成不同风速场景。论文用 11 台风机的数据与五种基准模型比较，同时检验轨迹形态和情景多样性。","A single forecast curve cannot describe the different ways a wind front may travel through a farm. GAPGAN maps turbine histories to a graph and generates alternative wind trajectories from the same observations. Using records from 11 turbines, the study compared five benchmarks and examined trajectory shape as well as scenario diversity.")),
-"prob":(("让风电功率预测区间保持有序","Keeping wind power prediction intervals ordered"),("分别预测多个分位数时，较高分位数可能落在较低分位数之下。该研究先学习中位数，再学习区间长度，使上下界保持有序。注意力辅助的常微分方程网络还可在更细的时间尺度上生成概率预测。","Estimating quantiles independently can place a higher quantile below a lower one. This work first learns the median and then interval lengths, preserving their order. An attention-assisted ordinary differential equation network also produces probabilistic forecasts at finer time resolutions.")),
-"impute":(("从相邻机组和历史记录补回缺测数据","Recovering missing turbine measurements"),("风机监控系统既会丢失零星读数，也会出现连续的数据空段。STF-GAIN 分别估计不同数据表示下的缺失值，再根据置信度融合结果。论文比较了随机缺失与成块缺失下的修复精度，并进一步检查修复数据对下游预测的影响。","Turbine monitoring systems lose individual readings as well as continuous blocks of data. STF-GAIN estimates missing values from different representations and combines the estimates according to their confidence. The study tested both missingness patterns and examined how imputed data affected downstream prediction.")),
-"design":(("从模糊需求推导可追溯的产品概念","Turning an ambiguous brief into a traceable concept"),("KnowLoop 先用功能、行为和结构之间的关系整理需求，再以领域知识图谱约束大语言模型，并由专家参与修订。在三项水处理装备设计任务中，相比 FBStd，专家对四项指标的评分平均提升约 2.8%。","KnowLoop structures requirements in terms of function, behaviour and structure. A domain knowledge graph and expert supervision then guide concept generation by a language model. Across three water-treatment equipment tasks, expert ratings averaged about 2.8% higher than FBStd over four evaluation criteria.")),
-"color":(("根据设计主题生成界面配色","Generating interface palettes for a design theme"),("同一主题可以有多种配色，但颜色之间仍需协调。CS-Ganerator 从图像中提取配色样本，并把色彩知识引入条件生成模型。生成后用和谐度筛选，再按冷暖与明暗整理结果，便于设计师在同一主题下比较方案。","A design theme can support many palettes, but the colours still need to work together. CS-Ganerator extracts palettes from images and integrates colour knowledge into a conditional generative model. It filters candidates for harmony, then groups them by properties such as warmth and darkness for designers to compare.")),
-"shelf":(("用代理模型筛选二维布局方案","Screening two-dimensional layouts with a surrogate"),("二维货架布局提供了一个检验代理模型辅助设计的场景。算法先用代理模型快速淘汰较差布局，随后利用禁忌表深入搜索，并在产生新解时修复不满足约束的布局。验证包含五类情景的 25 个仿真实例以及两个实际案例。","Two-dimensional shelf layouts provide a test of surrogate-assisted design. A surrogate first screens weak candidates, then a tabu list guides a deeper search. The genetic algorithm repairs infeasible layouts as it produces new ones. Evaluation covered 25 simulated instances across five scenarios and two real cases."))
+    "agv": (
+        ("堆场 AGV 实时调度", "Real-time AGV scheduling"),
+        ("物流堆场里的一次派车会同时改变车辆位置和后续任务的等待时间。为保证调度实时性，我们将派车表述为马尔可夫决策过程，以多智能体深度强化学习共同考虑总完工时间和车辆能耗。在不同规模堆场的仿真实验中，比较了所提策略与基准方法的运行效率和用能表现，验证了方法有效性。",
+         "A dispatch in a logistics yard changes both vehicle positions and waiting times for subsequent jobs. To support real-time scheduling, we formulate dispatch as a Markov decision process and use multi-agent deep reinforcement learning to consider makespan and vehicle energy consumption jointly. Simulations across different yard sizes compare operational and energy performance against benchmark methods, demonstrating the effectiveness of the proposed strategy.")
+    ),
+    "fault": (
+        ("跨工况多模态故障诊断", "Multimodal fault diagnosis across operating conditions"),
+        ("转速与负载改变时，振动信号也会变，而新工况的故障样本往往很少。MXProto 融合不同模态共有及特有的特征，再动态调整各原型分类器的权重。论文用公开数据集和消融实验检验两级融合对跨工况诊断的贡献。",
+         "Changes in speed and load alter vibration signals, yet faults recorded under new conditions can be scarce. MXProto fuses shared and modality-specific features, then adjusts the weights of prototype classifiers. Benchmark experiments and ablation studies examine how both fusion stages contribute to cross-condition diagnosis.")
+    ),
+    "wind": (
+        ("GAPGAN 风速场景生成", "GAPGAN wind speed scenario generation"),
+        ("单条预测曲线难以表达一股风电机组捕风情况的不确定性程度。提出 GAPGAN 方法，将多机组历史观测转成图，再从同一段历史生成不同风速场景，实现“平行时空”式预测。论文在验证方法精度的同时，检验了轨迹形态和情景多样性。",
+         "A single forecast curve cannot express the uncertainty in wind conditions experienced by turbines. GAPGAN converts historical observations from multiple turbines into a graph, then generates different wind speed scenarios from the same history, producing forecasts of alternative possible futures. Evaluation examines trajectory shape and scenario diversity alongside forecasting accuracy.")
+    ),
+    "impute": (
+        ("风机缺失数据的时空融合修复", "Spatiotemporal fusion for missing turbine data"),
+        ("风机监控系统既会丢失零星读数，也会出现连续的数据空段。STF-GAIN 分别估计不同数据表示下的缺失值，再根据置信度融合结果。论文比较了随机缺失与成块缺失下的修复精度，并进一步检查修复数据对下游预测的影响。",
+         "Turbine monitoring systems lose individual readings as well as continuous blocks of data. STF-GAIN estimates missing values from different representations and combines the estimates according to confidence. The study compares both missingness patterns and examines the effects on downstream prediction.")
+    ),
+    "design": (
+        ("KnowLoop 人机协同概念设计", "KnowLoop human-AI collaborative concept design"),
+        ("为结合大语言模型的生成能力，人的决策能力及知识库的可靠性，提出 KnowLoop 设计框架：先用功能、行为和结构之间的关系整理需求，再以领域知识图谱约束大语言模型，并由专家参与修订。在三项水处理装备设计任务中，取得最高设计方案评分。",
+         "KnowLoop combines the generative capabilities of large language models, human decision-making and the reliability of knowledge bases. It first structures requirements through relationships among function, behaviour and structure, then grounds language-model generation in a domain knowledge graph with expert revision. The framework achieves the highest design scores in three water-treatment equipment design tasks.")
+    ),
+    "color": (
+        ("知识与数据驱动的界面配色设计", "Knowledge- and data-driven interface colour design"),
+        ("同一主题可以有多种配色，但颜色之间仍需协调。CS-Ganerator 从图像中提取配色样本，并把色彩知识引入条件生成模型。生成后用和谐度筛选，再按冷暖与明暗整理结果，便于设计师在同一主题下比较方案。",
+         "A design theme can support many palettes, but the colours still need to work together. CS-Ganerator extracts palettes from images and integrates colour knowledge into a conditional generative model. Candidates are filtered for harmony and grouped by warmth and darkness for comparison.")
+    )
 }
