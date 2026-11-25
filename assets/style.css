@@ -78,7 +78,7 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .experience-grid .timeline { margin-top:12px; }
 .experience-grid .experience-row { display:grid; gap:12px; align-items:baseline; padding:10px 0; border-top:1px solid var(--line); }
 .experience-grid .education-row { grid-template-columns:100px minmax(0,1.2fr) minmax(0,1fr) minmax(0,.7fr); }
-.experience-grid .work-row { grid-template-columns:100px max-content minmax(0,1fr); }
+.experience-grid .work-row { grid-template-columns:100px minmax(0,1fr) minmax(0,1fr); }
 .work-row .employer { white-space:nowrap; }
 .table-scroll { overflow-x:auto; }
 .courses { width:100%; border-collapse:collapse; margin-top:22px; text-align:left; }
