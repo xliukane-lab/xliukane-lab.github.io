@@ -147,8 +147,8 @@ footer { background:#173734; color:#eff6ef; padding:28px 0; }footer .wrap { disp
  .experience-grid{grid-template-columns:1fr;gap:24px}.experience-grid h2{font-size:26px}
  .experience-grid .experience-row{gap:6px;font-size:13px}
  .experience-grid .education-row{grid-template-columns:72px minmax(0,1.2fr) minmax(0,.9fr) minmax(0,.65fr)}
- .experience-grid .work-row{grid-template-columns:72px max-content minmax(0,1fr);gap:8px}
- .experience-grid .work-row .employer{font-size:13px}
+ .experience-grid .work-row{grid-template-columns:minmax(0,1fr);gap:3px}
+ .experience-grid .work-row .employer{font-size:12px}
  .alumni-table th:first-child,.alumni-table td:first-child{width:76px}.alumni-table th:nth-child(2),.alumni-table td:nth-child(2){width:92px}
  .alumni-table th,.alumni-table td{padding:8px 6px 8px 0;font-size:13px}
  .cohort ul{gap:0}.cohort li{grid-template-columns:70px minmax(0,1fr);gap:10px;padding:7px 0}
