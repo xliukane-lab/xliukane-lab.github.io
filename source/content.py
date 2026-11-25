@@ -15,9 +15,9 @@ EDUCATION = [
     ("2017-2021", ("香港城市大学","City University of Hong Kong"), ("数据科学","Data Science"), ("直博","Direct-entry PhD"))
 ]
 APPOINTMENTS = [
-    ("2016-2017", ("中国电子信息产业集团有限公司第六研究所","Sixth Research Institute of China Electronics Corporation"), ("工程师","Engineer"), ("","")),
-    ("2021", ("香港城市大学 数据科学学院","City University of Hong Kong, School of Data Science"), ("科研助理","Research Assistant"), ("","")),
-    ("2021-至今", ("北京理工大学 机械与车辆学院","Beijing Institute of Technology, School of Mechanical Engineering"), ("预聘助理教授","Tenure-track Assistant Professor"), ("",""))
+    ("2016-2017", ("电子六所","Sixth Research Institute (CEC)"), ("工程师","Engineer"), ("","")),
+    ("2021", ("香港城市大学","City University of Hong Kong"), ("数据科学学院 · 科研助理","School of Data Science · Research Assistant"), ("","")),
+    ("2021-至今", ("北京理工大学","Beijing Institute of Technology"), ("机械与车辆学院 · 预聘助理教授","School of Mechanical Engineering · Tenure-track Assistant Professor"), ("",""))
 ]
 COURSES = [
     (("《智能制造系统》", "Intelligent Manufacturing Systems"), ("工业工程", "Industrial Engineering"), ("专业选修课", "Programme elective")),

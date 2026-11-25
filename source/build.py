@@ -48,15 +48,19 @@ class Site:
         authors=', '.join('<b>'+escape(a)+'</b>' if a.lower()=='xin liu' else escape(a) for a in p['authors'])
         return f'<div class="reference"><span class="venue">{escape(p["journal"])} · {p["year"]}</span><h3>{link("https://doi.org/"+p["doi"],escape(p["title"])+" ↗")}</h3><p>{authors}</p></div>'
     def experiences(self):
-        columns = []
-        for title, entries in [(self.t('个人经历', 'Education'), EDUCATION),
-                               (self.t('工作经历', 'Appointments'), APPOINTMENTS)]:
+        sections = []
+        for css_class, title, entries in [
+                ('education-experience', self.t('教育背景', 'Education'), EDUCATION),
+                ('work-experience', self.t('工作经历', 'Appointments'), APPOINTMENTS)]:
             rows = []
             for date, institution, discipline, qualification in entries:
                 when = date.replace('至今', 'present') if self.i else date
-                rows.append(f'<li><time>{when}</time><div>{self.pair(institution)}</div><div>{self.pair(discipline)}</div><div>{self.pair(qualification)}</div></li>')
-            columns.append(f'<section><h2>{title}</h2><ul class="timeline structured">{"".join(rows)}</ul></section>')
-        return '<div class="wrap section experience-grid">'+''.join(columns)+'</div>'
+                if css_class == 'work-experience':
+                    rows.append(f'<li class="experience-row work-row"><time>{when}</time><span class="employer">{self.pair(institution)}</span><div>{self.pair(discipline)}</div></li>')
+                else:
+                    rows.append(f'<li class="experience-row education-row"><time>{when}</time><span>{self.pair(institution)}</span><span>{self.pair(discipline)}</span><span>{self.pair(qualification)}</span></li>')
+            sections.append(f'<section class="{css_class}"><h2>{title}</h2><ul class="timeline">{"".join(rows)}</ul></section>')
+        return '<div class="wrap section experience-grid">'+''.join(sections)+'</div>'
 
     def courses(self):
         head = self.t(('课程','专业 / 对象','课程性质'), ('Course','Programme / audience','Course type'))
@@ -154,7 +158,7 @@ class Site:
 
     def alumni_table(self,students):
         entries=[]
-        for student in sorted(students,key=lambda s:(s.get('end','9999'),s['name'])):
+        for student in sorted(students,key=lambda s:(s.get('end','9999'),s['name']),reverse=True):
             graduation=student.get('end','')
             year=graduation[:4] if graduation else self.t('未注明','Not listed')
             display_name='  '.join(student['name']) if len(student['name'])==2 else student['name']

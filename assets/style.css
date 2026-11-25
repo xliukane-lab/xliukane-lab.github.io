@@ -73,10 +73,13 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .timeline { margin:20px 0 0; }
 .timeline li { display:grid; grid-template-columns:135px minmax(0,1fr); gap:14px; border-top:1px solid var(--line); padding:10px 0; }
 .timeline time,.cohort h4 { color:var(--teal); font-size:14px; font-weight:650; }
-.experience-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; border-bottom:1px solid var(--line); }
+.experience-grid { display:grid; grid-template-columns:minmax(0,1fr); gap:36px; border-bottom:1px solid var(--line); }
 .experience-grid h2 { font-size:29px; }
-.experience-grid .timeline li { grid-template-columns:105px minmax(0,1fr); gap:12px; padding:12px 0; }
-.experience-grid .timeline.structured li { grid-template-columns:90px minmax(0,1.3fr) minmax(0,1fr) minmax(0,.8fr); gap:10px; }
+.experience-grid .timeline { margin-top:12px; }
+.experience-grid .experience-row { display:grid; gap:12px; align-items:baseline; padding:10px 0; border-top:1px solid var(--line); }
+.experience-grid .education-row { grid-template-columns:100px minmax(0,1.2fr) minmax(0,1fr) minmax(0,.7fr); }
+.experience-grid .work-row { grid-template-columns:100px max-content minmax(0,1fr); }
+.work-row .employer { white-space:nowrap; }
 .table-scroll { overflow-x:auto; }
 .courses { width:100%; border-collapse:collapse; margin-top:22px; text-align:left; }
 .courses th,.courses td { padding:13px 15px 13px 0; border-bottom:1px solid var(--line); vertical-align:top; }
@@ -142,7 +145,10 @@ footer { background:#173734; color:#eff6ef; padding:28px 0; }footer .wrap { disp
  .pub-year{grid-template-columns:1fr;gap:14px}.cohort{grid-template-columns:1fr;gap:8px}.cohort ul{gap:10px 18px}
  .cohort ul{grid-template-columns:1fr}
  .experience-grid{grid-template-columns:1fr;gap:24px}.experience-grid h2{font-size:26px}
- .experience-grid .timeline.structured li{grid-template-columns:72px minmax(0,1fr) minmax(0,.85fr) minmax(0,.65fr);gap:5px;font-size:13px}
+ .experience-grid .experience-row{gap:6px;font-size:13px}
+ .experience-grid .education-row{grid-template-columns:72px minmax(0,1.2fr) minmax(0,.9fr) minmax(0,.65fr)}
+ .experience-grid .work-row{grid-template-columns:72px max-content minmax(0,1fr);gap:8px}
+ .experience-grid .work-row .employer{font-size:13px}
  .alumni-table th:first-child,.alumni-table td:first-child{width:76px}.alumni-table th:nth-child(2),.alumni-table td:nth-child(2){width:92px}
  .alumni-table th,.alumni-table td{padding:8px 6px 8px 0;font-size:13px}
  .cohort ul{gap:0}.cohort li{grid-template-columns:70px minmax(0,1fr);gap:10px;padding:7px 0}
