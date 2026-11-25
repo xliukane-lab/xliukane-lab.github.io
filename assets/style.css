@@ -15,7 +15,7 @@ a:focus-visible,summary:focus-visible { outline: 3px solid #a95c18; outline-offs
 header { border-bottom:1px solid var(--line); background:var(--paper); }
 .bar { min-height:82px; display:flex; align-items:center; gap:30px; }
 .brand { display:inline-flex; align-items:center; gap:16px; text-decoration:none; line-height:1.22; color:var(--ink); }
-.brand b,footer b { color:var(--teal); font: bold 34px/1 Georgia,serif; letter-spacing:-.065em; }
+.brand b,footer b { color:var(--teal); font: bold 34px/1 Georgia,serif; letter-spacing:0; white-space:pre; }
 .brand span { font-size:17px; font-weight:650; max-width:260px; padding-left:16px; border-left:1px solid var(--line); }
 nav { display:flex; align-items:center; gap:24px; margin-left:auto; }
 nav a,.language { color:var(--ink); font-size:15px; font-weight:620; text-decoration:none; }
@@ -41,8 +41,8 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 }
 .profile-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(185px,260px); gap:clamp(48px,8vw,120px); padding:49px 0; align-items:center; }
 .home-grid { display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:clamp(32px,5.5vw,70px); padding:42px 0; align-items:center; }
-.home-photo { overflow:hidden; background:#e9ece7; border-radius:3px; }
-.home-photo-image { display:block; width:100%; aspect-ratio:.98; object-fit:cover; object-position:51% 45%; transform:scale(1.28) translateX(-10%); }
+.home-photo { width:min(100%,340px); overflow:hidden; background:#e9ece7; border-radius:3px; }
+.home-photo-image { display:block; width:100%; aspect-ratio:.98; object-fit:cover; object-position:51% 45%; transform:scale(1.08) translateX(-9%); }
 .home-copy h1 { margin:8px 0 14px; font-size:clamp(44px,5vw,66px); }
 .person-name { white-space:pre; letter-spacing:0; }
 .home-copy .position { font-size:19px; }
@@ -76,6 +76,7 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .experience-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:40px; border-bottom:1px solid var(--line); }
 .experience-grid h2 { font-size:29px; }
 .experience-grid .timeline li { grid-template-columns:105px minmax(0,1fr); gap:12px; padding:12px 0; }
+.experience-grid .timeline.structured li { grid-template-columns:90px minmax(0,1.3fr) minmax(0,1fr) minmax(0,.8fr); gap:10px; }
 .table-scroll { overflow-x:auto; }
 .courses { width:100%; border-collapse:collapse; margin-top:22px; text-align:left; }
 .courses th,.courses td { padding:13px 15px 13px 0; border-bottom:1px solid var(--line); vertical-align:top; }
@@ -111,7 +112,15 @@ h3 { font-size:21px; letter-spacing:-.02em; }
 .cohort b { font-size:16px; }.cohort b span,.cohort li div { color:var(--sub); font-size:15px; line-height:1.65; }
 :lang(en) .cohort li { grid-template-columns:180px minmax(0,1fr); }
 .student-heading { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.student-heading b { white-space:pre; }
 .coadvisor { color:var(--sub); }
+.alumni-table { width:100%; border-collapse:collapse; table-layout:fixed; margin-top:14px; }
+.alumni-table th,.alumni-table td { border-bottom:1px solid var(--line); padding:9px 12px 9px 0; text-align:left; vertical-align:top; }
+.alumni-table th { color:var(--teal); font-weight:650; }
+.alumni-table th:first-child,.alumni-table td:first-child { width:120px; }
+.alumni-table th:nth-child(2),.alumni-table td:nth-child(2) { width:155px; }
+.alumni-table td:nth-child(2) { white-space:pre; }
+.footer-logo { display:block; width:148px; height:auto; margin:0 0 8px; }
 .people-areas .cards { margin-top:12px; }
 summary { font-size:24px; font-weight:650; cursor:pointer; }
 .destinations,.album { display:grid; grid-template-columns:1fr 1fr; gap:20px 36px; margin-top:20px; }.destinations h3 { font-size:18px; }.destinations p { margin-top:6px; }
@@ -125,7 +134,7 @@ footer { background:#173734; color:#eff6ef; padding:28px 0; }footer .wrap { disp
 @media(max-width:700px){
  .wrap{width:calc(100% - 36px)}.bar{flex-wrap:wrap;gap:11px;padding:13px 0}.brand{gap:9px}.brand b{font-size:30px}.brand span{padding-left:9px;max-width:205px}.language{margin-left:auto;font-size:14px}
  nav{order:3;width:100%;justify-content:space-between}nav a{font-size:14px}.section{padding:30px 0}
- .home-grid{grid-template-columns:1fr;gap:22px;padding:24px 0 29px}.home-photo-image{aspect-ratio:1.45;object-position:51% 44%}.home-copy h1{font-size:44px}.home-copy .position{font-size:17px}
+ .home-grid{grid-template-columns:1fr;gap:22px;padding:24px 0 29px}.home-photo{margin-inline:auto}.home-photo-image{aspect-ratio:1.45;object-position:51% 44%}.home-copy h1{font-size:44px}.home-copy .position{font-size:17px}
  .profile-grid{display:block;position:relative;padding:30px 0}.profile h1{margin:10px 0;font-size:46px}.portrait{position:absolute;right:0;top:30px;width:80px}.portrait img{height:100px}
  .profile .affiliation{font-size:13px;max-width:calc(100% - 96px)}.profile .position{font-size:17px}.profile .position,.profile .rank{max-width:calc(100% - 88px)}.rank{font-size:14px}
  .contact{gap:5px 13px}.summary{font-size:16px}.cards,.highlights,.album,.destinations,.history,.track-head,.study{grid-template-columns:1fr;gap:17px}
@@ -133,6 +142,9 @@ footer { background:#173734; color:#eff6ef; padding:28px 0; }footer .wrap { disp
  .pub-year{grid-template-columns:1fr;gap:14px}.cohort{grid-template-columns:1fr;gap:8px}.cohort ul{gap:10px 18px}
  .cohort ul{grid-template-columns:1fr}
  .experience-grid{grid-template-columns:1fr;gap:24px}.experience-grid h2{font-size:26px}
+ .experience-grid .timeline.structured li{grid-template-columns:72px minmax(0,1fr) minmax(0,.85fr) minmax(0,.65fr);gap:5px;font-size:13px}
+ .alumni-table th:first-child,.alumni-table td:first-child{width:76px}.alumni-table th:nth-child(2),.alumni-table td:nth-child(2){width:92px}
+ .alumni-table th,.alumni-table td{padding:8px 6px 8px 0;font-size:13px}
  .cohort ul{gap:0}.cohort li{grid-template-columns:70px minmax(0,1fr);gap:10px;padding:7px 0}
  :lang(en) .cohort li{grid-template-columns:minmax(0,1fr);gap:2px}
  .courses{font-size:14px}.courses th,.courses td{padding:10px 10px 10px 0}.courses td:first-child{width:43%}

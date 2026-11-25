@@ -166,7 +166,8 @@
     "topic": [
       "系统运筹优化",
       "Operations research and systems optimisation"
-    ]
+    ],
+    "coadvisor": ["项溪老师", "Xi Xiang"]
   },
   {
     "name": "钟维乐",
@@ -186,8 +187,8 @@
     "start": "2025-09",
     "end": "",
     "topic": [
-      "工业互联网与数字孪生",
-      "Industrial Internet and digital twins"
+      "工业互联网云边协同运行",
+      "Cloud-edge collaborative operations for the Industrial Internet"
     ]
   },
   {
@@ -197,8 +198,8 @@
     "start": "2025-09",
     "end": "",
     "topic": [
-      "生成式产品概念设计",
-      "Generative product concept design"
+      "智能制造垂域模型评价与验证",
+      "Evaluation and validation of domain models for intelligent manufacturing"
     ]
   },
   {
@@ -208,8 +209,8 @@
     "start": "2025-09",
     "end": "",
     "topic": [
-      "装备预测性控制",
-      "Predictive control of equipment"
+      "制造系统布局设计与协同运行控制",
+      "Manufacturing system layout design and coordinated operations control"
     ]
   },
   {
@@ -464,10 +465,6 @@
       "人机交互设计与评价",
       "Human-computer interaction design and evaluation"
     ],
-    "topic_extra": [
-      "基于大语言模型的设备评价",
-      "Equipment evaluation with large language models"
-    ],
     "coadvisor": [
       "刘敏霞老师",
       "Minxia Liu"
@@ -628,6 +625,7 @@
     "roman": "Yifan Xu",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "人机协同概念设计",
       "Human-AI collaborative conceptual design"
@@ -643,6 +641,7 @@
     "roman": "Jianhai Yu",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "设备健康管理与多模态故障诊断",
       "Equipment health management and multimodal fault diagnosis"
@@ -658,6 +657,7 @@
     "roman": "Qingwen Zhou",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "多模态融合条件下的具身智能控制",
       "Embodied intelligence control with multimodal fusion"
@@ -673,6 +673,7 @@
     "roman": "Haibo Liu",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "产品概念设计评价与收敛过程",
       "Evaluation and convergence in product concept design"
@@ -688,6 +689,7 @@
     "roman": "Jiayang Chen",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "风电场系统优化设计与控制",
       "System design and control for wind farms"
@@ -703,6 +705,7 @@
     "roman": "Shoulin Zhu",
     "degree": "M",
     "start": "2023-09",
+    "end": "2026-06",
     "topic": [
       "无人机群对抗自博弈演化",
       "Self-play evolution for adversarial drone swarms"
@@ -711,6 +714,37 @@
       "刘敏霞老师",
       "Minxia Liu"
     ],
+    "status": "graduated"
+  },
+  {
+    "name": "莫振冲",
+    "roman": "Zhenchong Mo",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": ["概念设计空间演进研究", "Evolution of conceptual design spaces"],
+    "coadvisor": ["阎艳老师", "Yan Yan"],
+    "status": "graduated"
+  },
+  {
+    "name": "崔浩然",
+    "roman": "Haoran Cui",
+    "degree": "M",
+    "start": "2023-09",
+    "end": "2026-06",
+    "topic": ["智能产品服务系统设计研究", "Intelligent product-service system design"],
+    "coadvisor": ["阎艳老师", "Yan Yan"],
+    "status": "graduated"
+  },
+  {
+    "name": "李鑫浩",
+    "roman": "Xinhao Li",
+    "degree": "M",
+    "start": "2022-09",
+    "end": "2025-06",
+    "topic": ["基于多模态数据融合的产品推荐系统研究", "Product recommendation through multimodal data fusion"],
+    "coadvisor": ["刘敏霞老师", "Minxia Liu"],
+    "coadvisor_mode": "协助",
     "status": "graduated"
   }
 ]
