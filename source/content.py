@@ -10,14 +10,14 @@ BIO = (
     "My research focuses on industrial intelligence, bringing data science and intelligent optimisation into manufacturing, logistics, renewable energy and product design. I use data mining to analyse and forecast uncertainty in the operating environments of equipment and systems, and develop optimisation methods to improve equipment control and system scheduling."
 )
 EDUCATION = [
-    ("2012-2016", "北京理工大学 · 工业工程 · 本科", "Beijing Institute of Technology · Industrial Engineering · Bachelor’s degree"),
-    ("2015-2016", "德国卡尔斯鲁厄理工学院 · 机械工程 · 访学", "Karlsruhe Institute of Technology, Germany · Mechanical Engineering · Visiting student"),
-    ("2017-2021", "香港城市大学 · 数据科学 · 直博", "City University of Hong Kong · Data Science · Direct-entry PhD")
+    ("2012-2016", ("北京理工大学","Beijing Institute of Technology"), ("工业工程","Industrial Engineering"), ("本科","Bachelor’s degree")),
+    ("2015-2016", ("德国卡尔斯鲁厄理工学院","Karlsruhe Institute of Technology, Germany"), ("机械工程","Mechanical Engineering"), ("访学","Visiting student")),
+    ("2017-2021", ("香港城市大学","City University of Hong Kong"), ("数据科学","Data Science"), ("直博","Direct-entry PhD"))
 ]
 APPOINTMENTS = [
-    ("2016-2017", "中国电子信息产业集团有限公司第六研究所 · 工程师", "Sixth Research Institute of China Electronics Corporation · Engineer"),
-    ("2021", "香港城市大学 · 数据科学学院 · 科研助理", "City University of Hong Kong · School of Data Science · Research Assistant"),
-    ("2021-至今", "北京理工大学 · 机械与车辆学院 · 预聘助理教授", "Beijing Institute of Technology · School of Mechanical Engineering · Tenure-track Assistant Professor")
+    ("2016-2017", ("中国电子信息产业集团有限公司第六研究所","Sixth Research Institute of China Electronics Corporation"), ("工程师","Engineer"), ("","")),
+    ("2021", ("香港城市大学 数据科学学院","City University of Hong Kong, School of Data Science"), ("科研助理","Research Assistant"), ("","")),
+    ("2021-至今", ("北京理工大学 机械与车辆学院","Beijing Institute of Technology, School of Mechanical Engineering"), ("预聘助理教授","Tenure-track Assistant Professor"), ("",""))
 ]
 COURSES = [
     (("《智能制造系统》", "Intelligent Manufacturing Systems"), ("工业工程", "Industrial Engineering"), ("专业选修课", "Programme elective")),
